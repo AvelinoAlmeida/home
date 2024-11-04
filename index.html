@@ -14,76 +14,61 @@
 <body>
 
     <!-- Cabeçalho -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#"><img src="./imagens/logo.png" alt="Logo Avelino Almeida" class="logo"></a>
+    <header class="bg-dark text-light">
+        <nav class="navbar navbar-expand-lg navbar-dark container">
+            <a class="navbar-brand" href="#">Avelino Almeida</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Sobre</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contactos">Contactos</a></li>
                 </ul>
             </div>
         </nav>
         
-        <div class="text-box text-center p-4">
+        <div class="text-box text-center py-5">
             <h1><span class="auto-input"></span></h1>
-            <p class="lead">Técnico Especialista em Gestão de Redes e Sistemas Informáticos, apaixonado por tecnologia e inovação, sendo o desenvolvimento front-end, sobretudo plataformas de construção, as minhas principais competências.</p>
-            <a class="btn btn-primary" href="#">Enviar Mensagem</a>
-            <a class="btn btn-outline-primary" href="#">Curriculum vitæ</a>
+            <p class="lead">Técnico Especialista em Gestão de Redes e Sistemas Informáticos, apaixonado por tecnologia e inovação. O desenvolvimento front-end é a minha principal competência.</p>
         </div>
     </header>
 
-    <!-- Secção de Imagem -->
-    <section class="text-center my-4">
-        <img src="imagens/octocat.png" class="user-img img-fluid" alt="Imagem do Octocat">
+    <!-- Secção de Sobre -->
+    <section id="sobre" class="container text-center my-5">
+        <h2 class="mb-4">Sobre Mim</h2>
+        <p>Com experiência em gestão de redes e sistemas informáticos, tenho uma grande paixão pela tecnologia e inovação, principalmente no desenvolvimento de soluções front-end. A minha missão é criar experiências digitais de qualidade que sejam intuitivas e eficazes.</p>
+        <img src="imagens/octocat.png" class="user-img img-fluid my-4" alt="Imagem do Octocat">
     </section>
 
     <!-- Rodapé -->
-    <footer class="bg-light text-dark py-4">
+    <footer id="contactos" class="bg-dark text-light py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <h2>Redes Sociais</h2>
-                    <p>Um site é a forma mais simples de ser encontrado nos dias de hoje na internet. Sendo o "Google" o principal canal de pesquisa mais usado, se <i>não estiver no Google</i>, logo não existo!</p>
-                    <div class="social d-flex gap-3">
-                        <a href="https://www.facebook.com/avelino.almeida.83/" class="text-dark"><span class="fab fa-facebook-f"></span></a>
-                        <a href="https://www.instagram.com/avelino_almeida/" class="text-dark"><span class="fab fa-instagram"></span></a>
-                        <a href="https://twitter.com/avlalmeida" class="text-dark"><span class="fab fa-twitter"></span></a>
-                        <a href="https://www.linkedin.com/in/avelinoalmeida/" class="text-dark"><span class="fab fa-linkedin"></span></a>
-                        <a href="https://github.com/AvelinoAlmeida/avelinoperfil" class="text-dark"><span class="fab fa-github"></span></a>
+            <div class="row text-center">
+                <div class="col-md-6 mb-4">
+                    <h5>Redes Sociais</h5>
+                    <p>Siga-me nas redes sociais para acompanhar as últimas novidades e projetos.</p>
+                    <div class="social d-flex justify-content-center gap-3">
+                        <a href="https://www.facebook.com/avelino.almeida.83/" class="text-light"><span class="fab fa-facebook-f"></span></a>
+                        <a href="https://www.instagram.com/avelino_almeida/" class="text-light"><span class="fab fa-instagram"></span></a>
+                        <a href="https://twitter.com/avlalmeida" class="text-light"><span class="fab fa-twitter"></span></a>
+                        <a href="https://www.linkedin.com/in/avelinoalmeida/" class="text-light"><span class="fab fa-linkedin"></span></a>
+                        <a href="https://github.com/AvelinoAlmeida/avelinoperfil" class="text-light"><span class="fab fa-github"></span></a>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <h2>Morada</h2>
-                    <div class="place"><span class="fas fa-map-marker-alt"></span><span class="text ms-2">Penafiel, Porto, PT</span></div>
-                    <div class="phone mt-2"><span class="fas fa-phone-alt"></span><span class="text ms-2">+351 916 472 603</span></div>
-                    <div class="mail mt-2"><span class="fas fa-envelope"></span><span class="text ms-2">avlalmeida@gmail.com</span></div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h2>Contato</h2>
-                    <form action="#">
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Mensagem</label>
-                            <textarea class="form-control" id="message" rows="3" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">ENVIAR</button>
-                    </form>
+                <div class="col-md-6 mb-4">
+                    <h5>Localização</h5>
+                    <p><i class="fas fa-map-marker-alt"></i> Penafiel, Porto, PT</p>
+                    <p><i class="fas fa-phone-alt"></i> +351 916 472 603</p>
+                    <p><i class="fas fa-envelope"></i> avlalmeida@gmail.com</p>
                 </div>
             </div>
-            <div class="text-center mt-4">
-                <span class="credit">Criado por <a href="https://github.com/AvelinoAlmeida/avelinoperfil" class="text-decoration-none">Avelino Almeida</a> |</span>
-                <span class="far fa-copyright"> 2021 - Versão 11.24</span>
+            <div class="text-center mt-3">
+                <span>Criado por <a href="https://github.com/AvelinoAlmeida/avelinoperfil" class="text-decoration-none text-light">Avelino Almeida</a> |</span>
+                <span>&copy; 2021 - Versão 11.24</span>
                 <br>
-                <span>Todos os Direitos Reservados | Politica de Privacidade</span>
+                <span>Todos os Direitos Reservados | Política de Privacidade</span>
             </div>
         </div>
     </footer>

@@ -8,238 +8,166 @@
 }
 
 body {
-    background-color: #121212; /* Fundo escuro para um visual moderno */
-    color: #E1E1E1; /* Texto mais claro */
+    background-color: #f5f5f5;
+    color: #333;
 }
 
 header {
-    width: 100%;
-    height: 7vh;
-    background-color: #1F1B24;
-    color: #E1E1E1;
-    padding: 0 8.5%;
-    position: relative;
-}
-
-nav {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    flex-wrap: wrap;
+    background-color: #4A90E2;
+    color: #fff;
     padding: 20px 0;
 }
 
-.logo {
-    width: 100px;
-    cursor: pointer;
+.navbar-brand {
+    font-weight: 700;
+    font-size: 24px;
+    color: #FFD700;
 }
 
-nav ul {
-    flex: 1;
-    text-align: center;
-    padding-right: 40px;
-}
-
-nav ul li {
-    display: inline-block;
-    list-style: none;
-    margin: 0 20px;
-}
-
-nav ul li a {
-    color: #E1E1E1;
-    text-decoration: none;
+.navbar-nav .nav-link {
+    color: #fff;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 16px;
+    font-weight: 500;
+    padding: 10px;
     transition: color 0.3s;
 }
 
-nav ul li a:hover {
-    color: #BB86FC; /* Hover em roxo vibrante */
+.navbar-nav .nav-link:hover {
+    color: #d1e8ff;
 }
 
 .text-box {
-    margin-top: 10%;
-    font-size: 18px;
-    letter-spacing: 1px;
-    line-height: 1.6;
     text-align: center;
+    padding: 50px 20px;
+    color: #fff;
 }
 
 .text-box h1 {
-    font-size: 64px;
+    font-size: 50px;
     font-weight: 700;
-    color: #E1E1E1;
     margin-bottom: 20px;
 }
 
-.text-box a {
-    margin-top: 30px;
-    display: inline-block;
-    border-radius: 6px;
-    padding: 12px 30px;
-    text-decoration: none;
-    font-weight: 500;
+.text-box p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 30px;
 }
 
-.text-box .btn-primary {
-    background-color: #BB86FC;
-    color: #121212;
-    margin: 20px 10px;
-    border: 1px solid #BB86FC;
-    transition: background-color 0.3s;
+#sobre {
+    background-color: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+    color: #333;
 }
 
-.text-box .btn-outline {
-    background-color: transparent;
-    color: #BB86FC;
-    border: 1px solid #BB86FC;
-    margin: 20px 10px;
-    transition: background-color 0.3s, color 0.3s;
+#sobre h2 {
+    font-size: 36px;
+    color: #4A90E2;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
-.text-box .btn-primary:hover,
-.text-box .btn-outline:hover {
-    background-color: #E1E1E1;
-    color: #121212;
+#sobre p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 
 .user-img {
-    width: 100%;
-    max-width: 400px;
-    display: block;
-    margin: 0 auto;
+    width: 300px; /* Aumentei o tamanho da imagem */
     border-radius: 10px;
+    margin-top: 20px;
 }
 
-/* FOOTER */
+#portfolio {
+    background-color: #f7f9fc;
+    padding: 60px 20px;
+}
+
+#portfolio h2 {
+    font-size: 36px;
+    color: #4A90E2;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    color: #4A90E2;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.card-text {
+    font-size: 16px;
+    color: #555;
+}
 
 footer {
-    background-color: #1F1B24;
-    color: #E1E1E1;
-    padding: 20px 0;
+    background-color: #333;
+    color: #ccc;
+    padding: 40px 20px;
 }
 
-.main-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.main-content .box {
-    flex-basis: 30%;
-    padding: 20px;
-}
-
-.box h2 {
+footer h5 {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 600;
+    color: #FFD700;
     margin-bottom: 20px;
 }
 
-.box .content {
-    position: relative;
-}
-
-.left .content p {
-    text-align: justify;
+footer p {
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .social a {
-    color: #E1E1E1;
-    margin: 0 10px;
+    color: #FFD700;
+    font-size: 24px;
     transition: color 0.3s;
 }
 
 .social a:hover {
-    color: #BB86FC;
+    color: #fff;
 }
 
-.center .content .fas {
-    font-size: 20px;
-    background-color: #121212;
-    color: #BB86FC;
-    height: 40px;
-    width: 40px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    margin-right: 10px;
-    transition: background-color 0.3s;
+footer .text-center span,
+footer .text-center a {
+    color: #ccc;
+    font-size: 14px;
 }
 
-.center .content .fas:hover {
-    background-color: #BB86FC;
-    color: #121212;
+footer .text-center a:hover {
+    color: #FFD700;
 }
 
-.center .content .text {
-    font-size: 16px;
-}
-
-.right form .text {
-    font-size: 16px;
-    margin-bottom: 5px;
-}
-
-.right form input,
-.right form textarea {
-    width: 100%;
-    font-size: 15px;
-    background-color: #292929;
-    color: #E1E1E1;
-    padding: 10px;
-    border: none;
-    margin-bottom: 15px;
-    border-radius: 4px;
-}
-
-.right form .btn button {
-    height: 45px;
-    width: 100%;
-    border-radius: 6px;
-    background-color: #BB86FC;
-    color: #121212;
-    font-size: 16px;
-    font-weight: 500;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.right form .btn button:hover {
-    background-color: #E1E1E1;
-    color: #121212;
-}
-
-.bottom {
-    padding-top: 10px;
-    text-align: center;
-}
-
-.bottom span {
-    color: #E1E1E1;
-}
-
-.bottom a {
-    color: #BB86FC;
-    text-decoration: none;
-}
-
-.bottom a:hover {
-    text-decoration: underline;
-}
-
-/* Responsividade */
-
-@media screen and (max-width: 900px) {
-    .main-content {
-        flex-direction: column;
-        align-items: center;
+@media (max-width: 768px) {
+    .text-box h1 {
+        font-size: 36px;
     }
-    .main-content .box {
-        flex-basis: 90%;
+    
+    .text-box p {
+        font-size: 16px;
+    }
+    
+    .navbar-nav .nav-link {
+        font-size: 14px;
+    }
+    
+    #sobre h2, #portfolio h2 {
+        font-size: 28px;
     }
 }
