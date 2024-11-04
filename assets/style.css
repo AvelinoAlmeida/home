@@ -1,293 +1,245 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
 
- * { 
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
-     font-family: "Poppins", sans-serif;
- }
-
- body{
-    background-color: #0F0840;
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
 }
 
- header {
+body {
+    background-color: #121212; /* Fundo escuro para um visual moderno */
+    color: #E1E1E1; /* Texto mais claro */
+}
+
+header {
     width: 100%;
     height: 7vh;
-    background-color: #0F0840;
-    color: #F2F2F2;
+    background-color: #1F1B24;
+    color: #E1E1E1;
     padding: 0 8.5%;
     position: relative;
 }
 
-nav{
+nav {
     display: flex;
     width: 100%;
     align-items: center;
     flex-wrap: wrap;
-    padding: 30 0 10px;
+    padding: 20px 0;
 }
 
-.logo{
+.logo {
     width: 100px;
     cursor: pointer;
 }
 
-nav ul{
+nav ul {
     flex: 1;
     text-align: center;
     padding-right: 40px;
 }
 
-nav ul li{
+nav ul li {
     display: inline-block;
     list-style: none;
-    margin: 10px 30px;
+    margin: 0 20px;
 }
 
-nav ul li a{
-    color: #f2f2f2;
+nav ul li a {
+    color: #E1E1E1;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 17px;
-    transition: .3s;
+    font-size: 16px;
+    transition: color 0.3s;
 }
 
-nav ul li a:hover{
-    color: #6da7f2;
+nav ul li a:hover {
+    color: #BB86FC; /* Hover em roxo vibrante */
 }
 
-.text-box{
-    margin-top: 15%;
-    font-size: 17px;
+.text-box {
+    margin-top: 10%;
+    font-size: 18px;
     letter-spacing: 1px;
-    line-height: 26px;
-    color: #F2F2F2;
+    line-height: 1.6;
+    text-align: center;
 }
 
-.text-box h1{
-    font-size: 75px;
-    line-height: 160px;
-    color: #F2F2F2;
+.text-box h1 {
+    font-size: 64px;
+    font-weight: 700;
+    color: #E1E1E1;
+    margin-bottom: 20px;
 }
 
-.text-box a{
+.text-box a {
     margin-top: 30px;
     display: inline-block;
     border-radius: 6px;
-    border: 1px solid #6DA7F2;
-    color: #6DA7F2;
-    padding: 10px 30px;
-    text-decoration: nome;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: 500;
 }
 
-.text-box .btn{
-    background-color: #6DA7F2;
-    color: #f2f2f2;
-    margin: 30px;
-    font-weight: 600;
+.text-box .btn-primary {
+    background-color: #BB86FC;
+    color: #121212;
+    margin: 20px 10px;
+    border: 1px solid #BB86FC;
+    transition: background-color 0.3s;
 }
 
-.user-img{
-    width: 500px;
-    position: absolute;
-    left: 500;
-    bottom: 500;
+.text-box .btn-outline {
+    background-color: transparent;
+    color: #BB86FC;
+    border: 1px solid #BB86FC;
+    margin: 20px 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.text-box .btn-primary:hover,
+.text-box .btn-outline:hover {
+    background-color: #E1E1E1;
+    color: #121212;
+}
+
+.user-img {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
 }
 
 /* FOOTER */
- 
-  footer{
-      position: fixed;
-      bottom: 0px;
-      width: 100%;
-      background-color: #0F0840;
-      color: #f2f2f2;
-  }
- 
-  .main-content{
-      display: flex;
-  }
- 
-  .main-content .box{
-      flex-basis: 50%;
-      padding: 10px 20px;
-  }
- 
-  .box h2{
-      font-size: 1.125rem;
-      font-weight: 600;
-      text-transform: uppercase;
-  }
- 
-  .box .content{
-      margin: 20px 0 0 0;
-      position: relative;
-  }
- 
-  .box .content::before{
-      position: absolute;
-      content: "";
-      top: -10px;
-      height: 4px;
-      width: 100%;
-      background-color: #1a1a1a;
-  }
- 
-  .box .content::after{
-      position: absolute;
-      content: "";
-      top: -10px;
-      height: 4px;
-      width: 30%;
-      background-color: #6650F2;
-  }
- 
-  .left .content .social{
-     margin: 20px 0 0 0;
- }
- 
- .left .content p{
-     text-align: justify;
- }
- 
-  .left .content .social a{
-      padding: 0 3px;
-  }
- 
-  .left .content .social a span{
-     height: 40px;
-     width: 40px;
-     background-color: #1a1a1a ;
-     color: #F2F2F2;
-     line-height: 40px;
-     text-align: center;
-     font-size: 18px;
-     border-radius: 5px;
-     transition: .3s; 
- }
- 
- .left .content .social a span:hover{
-     background: #6650F2;
- }
- 
- .center .content .fas{
-     font-size: 1.4375rem;
-     background-color: #1a1a1a;
-     height: 45px;
-     width: 45px;
-     line-height: 45px;
-     text-align: center;
-     border-radius: 50%;
-     cursor: pointer;
-     transition: .3s;
- }
- 
- .center .content .fas:hover{
-     background-color: #6650F2;
- }
- 
- .center .content .text{
-     font-size: 1.07rem;
-     font-weight: 500;
-     padding-left: 10px; 
- }
- 
- .center .content .phone{
-     margin: 8px 0;
- }
- 
- .right form .text{
-     font-size: 1.07rem;
-     margin-bottom: 2px;
-     color: #f2f2f2;
- }
- 
- .right form .msg{
-     margin-top: 10px;
- }
- 
- .right form input,
- .right form textarea{
-     width: 100%;
-     font-size: 1.07rem;
-     background-color: #F2F2F2;
-     padding-left: 10px;
-     border: 1px solid #1A1A1A;
- }
- 
- .right form input{
-     height: 35px;
- }
- 
- .right form .btn{
-     margin-top: 10px;
- }
- 
- .right form .btn button{
-     height: 50px;
-     width: 120%;
-     border-radius: 10px;
-     border: none;
-     outline: none;
-     background-color: #6650F2;
-     font-size: 1.07rem;
-     font-weight: 500;
-     cursor: pointer;
-     transition: .3s;
- }
- 
- .right form .btn button:hover{
-     background-color: #6650F2;
-     color: #F2F2F2;
- }
- 
- .right form input:focus,
- .right form textarea:focus{
-     outline-color: #f2f2f2;
- }
- 
- /* Botton */ 
 
- .bottom {
-     padding-top: 10px;
-     font-size: 11px;
-     background-color: #0F0840;
-     text-align: center;
- }
- 
- .bottom span{
-    color: #f2f2f2;
- }
- 
- .bottom a{
-     text-align: center;
-     color: #6650F2;
-     text-decoration: none;
- }
- 
- .bottom .credit a:hover{
-     text-decoration: underline;
- }
- 
+footer {
+    background-color: #1F1B24;
+    color: #E1E1E1;
+    padding: 20px 0;
+}
 
- @media screen and (max-width: 900px){
-     footer{
-         position: relative;
-         bottom: 0px;
-     }
- 
-     .main-content{
-         flex-wrap: wrap;
-         flex-direction: column;
-     }
- 
-     .main-content .box{
-         margin: 5px 0;
-     }
- }
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 
+.main-content .box {
+    flex-basis: 30%;
+    padding: 20px;
+}
 
+.box h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
 
+.box .content {
+    position: relative;
+}
 
+.left .content p {
+    text-align: justify;
+}
+
+.social a {
+    color: #E1E1E1;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social a:hover {
+    color: #BB86FC;
+}
+
+.center .content .fas {
+    font-size: 20px;
+    background-color: #121212;
+    color: #BB86FC;
+    height: 40px;
+    width: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.center .content .fas:hover {
+    background-color: #BB86FC;
+    color: #121212;
+}
+
+.center .content .text {
+    font-size: 16px;
+}
+
+.right form .text {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.right form input,
+.right form textarea {
+    width: 100%;
+    font-size: 15px;
+    background-color: #292929;
+    color: #E1E1E1;
+    padding: 10px;
+    border: none;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.right form .btn button {
+    height: 45px;
+    width: 100%;
+    border-radius: 6px;
+    background-color: #BB86FC;
+    color: #121212;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.right form .btn button:hover {
+    background-color: #E1E1E1;
+    color: #121212;
+}
+
+.bottom {
+    padding-top: 10px;
+    text-align: center;
+}
+
+.bottom span {
+    color: #E1E1E1;
+}
+
+.bottom a {
+    color: #BB86FC;
+    text-decoration: none;
+}
+
+.bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade */
+
+@media screen and (max-width: 900px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .main-content .box {
+        flex-basis: 90%;
+    }
+}
