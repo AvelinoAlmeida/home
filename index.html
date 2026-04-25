@@ -15,8 +15,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
-    <!-- Google Fonts (apenas o essencial) -->
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -38,23 +38,29 @@
         <div class="preloader-inner">
             <svg class="logo-svg" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
                 <rect width="56" height="56" rx="14" fill="#2563EB"/>
-                <text x="28" y="40" text-anchor="middle" font-family="'Abril Fatface',serif"
-                      font-size="28" fill="#fff" letter-spacing="-1">AA</text>
+                <text x="28" y="36" text-anchor="middle" font-family="'Space Grotesk',sans-serif"
+                      font-size="21" font-weight="700" fill="#fff" letter-spacing="-1">AA</text>
             </svg>
         </div>
     </div>
 
     <!-- ═══════════════════════════════════════════ NAVBAR -->
     <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
+        <div class="container container-xl">
 
             <!-- Logótipo AA -->
             <a class="navbar-brand" href="#hero">
-                <svg viewBox="0 0 48 48" width="40" height="40" xmlns="http://www.w3.org/2000/svg" aria-label="AA">
-                    <rect width="48" height="48" rx="12" fill="#2563EB"/>
-                    <text x="24" y="35" text-anchor="middle" font-family="'Abril Fatface',serif"
-                          font-size="24" fill="#fff" letter-spacing="-1">AA</text>
-                </svg>
+                <span class="brand-mark">
+                    <svg viewBox="0 0 48 48" width="40" height="40" xmlns="http://www.w3.org/2000/svg" aria-label="AA">
+                        <rect width="48" height="48" rx="12" fill="#2563EB"/>
+                        <text x="24" y="31" text-anchor="middle" font-family="'Space Grotesk',sans-serif"
+                              font-size="18" font-weight="700" fill="#fff" letter-spacing="-1">AA</text>
+                    </svg>
+                </span>
+                <span class="brand-meta d-none d-sm-flex">
+                    <strong class="brand-name">Avelino Almeida</strong>
+                    <span class="brand-role">Database Administrator</span>
+                </span>
             </a>
 
             <!-- Toggle mobile -->
@@ -79,18 +85,68 @@
     <!-- ═══════════════════════════════════════════ HERO -->
     <section id="hero">
         <div class="hero-overlay"></div>
-        <div class="hero-content text-center">
-            <span class="hero-tag reveal-up" style="--d:0ms">DBA &nbsp;·&nbsp; Penafiel &nbsp;·&nbsp; BTT</span>
-            <h1 class="hero-title reveal-up" style="--d:180ms">Avelino<br>Almeida</h1>
-            <p class="hero-sub reveal-up" style="--d:360ms">
-                Comprometido, proativo e apaixonado por tecnologia e dados.<br class="d-none d-md-block">
-                Com raízes profundas no norte de Portugal, trago para cada projeto<br class="d-none d-md-block">
-                rigor técnico, visão estratégica e a determinação de quem sabe de onde vem.
-            </p>
-            <div class="hero-cta reveal-up" style="--d:520ms">
-                <a href="#about" class="btn btn-primary btn-hero">Saiba Mais</a>
-                <a href="https://www.linkedin.com/in/avelinoalmeida/" class="btn btn-outline-light btn-hero"
-                   target="_blank" rel="noopener">LinkedIn</a>
+        <div class="container container-xl hero-shell">
+            <div class="row align-items-center g-4 g-xl-5">
+                <div class="col-xl-7">
+                    <div class="hero-copy">
+                        <span class="hero-tag reveal-up" style="--d:0ms">DBA &nbsp;|&nbsp; Penafiel &nbsp;</span>
+                        <h1 class="hero-title reveal-up" style="--d:180ms"><em>Bases de dados para ambientes onde falhar n&atilde;o &eacute; op&ccedil;&atilde;o.</em></h1>
+                        <p class="hero-sub reveal-up" style="--d:360ms">
+                            Experi&ecirc;ncia em opera&ccedil;&atilde;o, suporte e evolu&ccedil;&atilde;o de plataformas de dados,
+                            com uma abordagem orientada &agrave; estabilidade, ao controlo e &agrave; continuidade operacional.
+                        </p>
+                        <div class="hero-cta reveal-up" style="--d:520ms">
+                            <a href="#about" class="btn btn-primary btn-hero">Ver perfil</a>
+                            <a href="#contact" class="btn btn-outline-light btn-hero">Falar comigo</a>
+                        </div>
+                        <div class="row row-cols-1 row-cols-sm-3 g-3 hero-metrics reveal-up" style="--d:680ms">
+                            <div class="col">
+                                <div class="hero-metric">
+                                    <span class="hero-metric-value">SQL</span>
+                                    <span class="hero-metric-label">Administra&ccedil;&atilde;o, tuning e opera&ccedil;&atilde;o</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="hero-metric">
+                                    <span class="hero-metric-value">Cloud</span>
+                                    <span class="hero-metric-label">Integra&ccedil;&atilde;o com ambientes modernos</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="hero-metric">
+                                    <span class="hero-metric-value">24/7</span>
+                                    <span class="hero-metric-label">Mentalidade de fiabilidade e continuidade</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-5">
+                    <aside class="hero-panel reveal-up" style="--d:420ms" aria-label="Resumo profissional">
+                        <span class="hero-panel-eyebrow">Perfil em resumo</span>
+                        <h2 class="hero-panel-title">Database Administrator com foco na produ&ccedil;&atilde;o, integra&ccedil;&atilde;o e recupera&ccedil;&atilde;o.</h2>
+                        <div class="hero-panel-list">
+                            <div class="hero-panel-item">
+                                <span class="hero-panel-label">Especializa&ccedil;&atilde;o</span>
+                                <strong>SQL Server, Oracle, PostgreSQL e opera&ccedil;&otilde;es DBA</strong>
+                            </div>
+                            <div class="hero-panel-item">
+                                <span class="hero-panel-label">Abordagem</span>
+                                <strong>Estabilidade, performance, seguran&ccedil;a e melhoria cont&iacute;nua</strong>
+                            </div>
+                            <div class="hero-panel-item">
+                                <span class="hero-panel-label">Base</span>
+                                <strong>Penafiel, Portugal</strong>
+                            </div>
+                        </div>
+                        <div class="hero-panel-foot">
+                            <span>Dispon&iacute;vel para contacto profissional e networking.</span>
+                            <a href="https://www.linkedin.com/in/avelinoalmeida/" target="_blank" rel="noopener">
+                                LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </aside>
+                </div>
             </div>
         </div>
         <a href="#about" class="hero-scroll" aria-label="Scroll">
@@ -100,7 +156,7 @@
 
     <!-- ═══════════════════════════════════════════ SOBRE — Penafiel -->
     <section id="about">
-        <div class="container position-relative" style="z-index:1">
+        <div class="container container-xl position-relative" style="z-index:1">
 
             <div class="row align-items-center g-5">
                 <!-- Texto pessoal -->
@@ -108,15 +164,14 @@
                     <span class="section-tag light reveal-left">Sobre Mim</span>
                     <h2 class="section-title light reveal-left">Das raízes do<br>Vale do Sousa.</h2>
                     <p class="text-light-muted reveal-left">
-                        Nasci e cresci em Penafiel, a poucos quilómetros das famosas
-                        Termas de São Vicente de Pinheiro — um lugar de história, silêncio e
-                        cura que faz parte da minha identidade desde criança.
+                        Sou natural de Penafiel, com liga&ccedil;&atilde;o &agrave; zona das Termas de S&atilde;o Vicente.
+                        Esta origem no norte de Portugal faz parte do meu percurso e da forma como encaro
+                        o trabalho com consist&ecirc;ncia, proximidade e sentido de responsabilidade.
                     </p>
                     <p class="text-light-muted reveal-left">
-                        Nestas terras do norte de Portugal aprendi os valores que me definem:
-                        trabalho, determinação e a pertença a uma comunidade com séculos de
-                        história. Das vinhas do Douro às serranias verdes do Vale do Sousa,
-                        é daqui que venho — e é daqui que tiro a força para tudo o que faço.
+                        Trago essa base para o contexto profissional atrav&eacute;s de uma abordagem est&aacute;vel,
+                        disciplinada e orientada &agrave; continuidade operacional, especialmente em ambientes
+                        onde a fiabilidade dos sistemas &eacute; um requisito central.
                     </p>
                     <div class="about-badges reveal-left">
                         <span class="badge-pill"><i class="fa-solid fa-location-dot"></i> Penafiel</span>
@@ -131,7 +186,8 @@
                     <h3 class="section-title light reveal-right" style="font-size:2.8rem">
                         Lugares para Descobrir
                     </h3>
-                    <div class="places-list reveal-right">
+                    <div class="about-panel reveal-right">
+                        <div class="places-list">
                         <div class="place-item">
                             <div class="place-icon"><i class="fa-solid fa-church"></i></div>
                             <div>
@@ -161,6 +217,7 @@
                             </div>
                         </div>
                     </div>
+                    </div>
                 </div>
             </div>
 
@@ -174,7 +231,7 @@
     -->
     <section id="skills">
         <div class="skills-overlay"></div>
-        <div class="container position-relative" style="z-index:1">
+        <div class="container container-xl position-relative" style="z-index:1">
 
             <div class="section-header text-center reveal-up">
                 <span class="section-tag light">Competências</span>
@@ -384,7 +441,7 @@
 
     <!-- ═══════════════════════════════════════════ LAZER — KTM -->
     <section id="lazer">
-        <div class="container">
+        <div class="container container-xl">
 
             <div class="row align-items-center g-5">
 
@@ -563,13 +620,13 @@
 
     <!-- ═══════════════════════════════════════════ CONTACTO -->
     <section id="contact">
-        <div class="container">
+        <div class="container container-xl">
 
             <div class="section-header text-center reveal-up">
                 <span class="section-tag light">Contacto</span>
                 <h2 class="section-title light">Entre em Contacto</h2>
                 <p class="text-light-muted">
-                    Tem um projeto de bases de dados ou quer trocar ideias sobre trilhos de BTT?
+                    &Agrave;s vezes, tudo come&ccedil;a com uma simples mensagem.
                 </p>
             </div>
 
@@ -577,37 +634,46 @@
 
                 <!-- Info -->
                 <div class="col-lg-4 reveal-left">
-                    <ul class="contact-list">
-                        <li>
-                            <span class="contact-icon"><i class="fa-solid fa-mobile-screen-button"></i></span>
-                            <span>+351 916 472 603</span>
-                        </li>
-                        <li>
-                            <span class="contact-icon"><i class="fa-regular fa-envelope"></i></span>
-                            <span>avlalmeida@gmail.com</span>
-                        </li>
-                        <li>
-                            <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
-                            <span>Penafiel, Portugal</span>
-                        </li>
-                    </ul>
+                    <div class="contact-card">
+                        <span class="contact-card-tag">Disponibilidade</span>
+                        <h3 class="contact-card-title">Dispon&iacute;vel para novas liga&ccedil;&otilde;es e oportunidades.</h3>
+                        <p class="contact-card-copy">
+                            Contacto para networking, interesses partilhados, agendamento de entrevistas e
+                            oportunidades de emprego.
+                        </p>
 
-                    <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/avelinoalmeida/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://github.com/AvelinoAlmeida/avelinoperfil" target="_blank" rel="noopener" aria-label="GitHub">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                        <a href="https://www.instagram.com/avelino_almeida/" target="_blank" rel="noopener" aria-label="Instagram">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                        <a href="https://twitter.com/avlalmeida" target="_blank" rel="noopener" aria-label="Twitter / X">
-                            <i class="fa-brands fa-x-twitter"></i>
-                        </a>
-                        <a href="https://www.facebook.com/avelino.almeida.83/" target="_blank" rel="noopener" aria-label="Facebook">
-                            <i class="fa-brands fa-facebook-f"></i>
-                        </a>
+                        <ul class="contact-list">
+                            <li>
+                                <span class="contact-icon"><i class="fa-solid fa-mobile-screen-button"></i></span>
+                                <span>+351 916 472 603</span>
+                            </li>
+                            <li>
+                                <span class="contact-icon"><i class="fa-regular fa-envelope"></i></span>
+                                <span>avlalmeida@gmail.com</span>
+                            </li>
+                            <li>
+                                <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
+                                <span>Penafiel, Portugal</span>
+                            </li>
+                        </ul>
+
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/in/avelinoalmeida/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/AvelinoAlmeida/avelinoperfil" target="_blank" rel="noopener" aria-label="GitHub">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://www.instagram.com/avelino_almeida/" target="_blank" rel="noopener" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://twitter.com/avlalmeida" target="_blank" rel="noopener" aria-label="Twitter / X">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+                            <a href="https://www.facebook.com/avelino.almeida.83/" target="_blank" rel="noopener" aria-label="Facebook">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -620,39 +686,41 @@
                     4. Substitua YOUR_ACCESS_KEY abaixo pela chave recebida
                 -->
                 <div class="col-lg-8 reveal-right">
-                    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
-                        <input type="hidden" name="access_key" value="c298b872-baf8-486a-abd9-abb22dd241b7">
-                        <input type="hidden" name="subject" value="Contacto via avelinoalmeida.github.io">
-                        <input type="hidden" name="from_name" value="Website Avelino">
-                        <input type="checkbox" name="botcheck" style="display:none">
+                    <div class="contact-panel">
+                        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+                            <input type="hidden" name="access_key" value="c298b872-baf8-486a-abd9-abb22dd241b7">
+                            <input type="hidden" name="subject" value="Contacto via avelinoalmeida.github.io">
+                            <input type="hidden" name="from_name" value="Website Avelino">
+                            <input type="checkbox" name="botcheck" style="display:none">
 
-                        <div class="row g-3">
-                            <div class="col-sm-6">
-                                <input type="text" name="name" class="form-ctrl" placeholder="* Nome" required>
-                            </div>
-                            <div class="col-sm-6">
-                                <input type="email" name="email" class="form-ctrl" placeholder="* Email" required>
-                            </div>
-                            <div class="col-12">
-                                <textarea name="message" class="form-ctrl" rows="5"
-                                          placeholder="* Mensagem" required></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn-send" id="submit-btn">
-                                    <span class="btn-text">Enviar Mensagem <i class="fa-regular fa-paper-plane"></i></span>
-                                    <span class="btn-loading d-none">
-                                        <span class="spinner-border spinner-border-sm"></span> A enviar…
-                                    </span>
-                                </button>
-                                <div id="form-success" class="form-success d-none">
-                                    <i class="fa-solid fa-circle-check"></i> Mensagem enviada com sucesso!
+                            <div class="row g-3">
+                                <div class="col-sm-6">
+                                    <input type="text" name="name" class="form-ctrl" placeholder="* Nome" required>
                                 </div>
-                                <div id="form-error" class="form-error d-none">
-                                    <i class="fa-solid fa-circle-exclamation"></i> Erro ao enviar. Tente novamente.
+                                <div class="col-sm-6">
+                                    <input type="email" name="email" class="form-ctrl" placeholder="* Email" required>
+                                </div>
+                                <div class="col-12">
+                                    <textarea name="message" class="form-ctrl" rows="5"
+                                              placeholder="* Mensagem" required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn-send" id="submit-btn">
+                                        <span class="btn-text">Enviar Mensagem <i class="fa-regular fa-paper-plane"></i></span>
+                                        <span class="btn-loading d-none">
+                                            <span class="spinner-border spinner-border-sm"></span> A enviar…
+                                        </span>
+                                    </button>
+                                    <div id="form-success" class="form-success d-none">
+                                        <i class="fa-solid fa-circle-check"></i> Mensagem enviada com sucesso!
+                                    </div>
+                                    <div id="form-error" class="form-error d-none">
+                                        <i class="fa-solid fa-circle-exclamation"></i> Erro ao enviar. Tente novamente.
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
 
             </div>
@@ -662,7 +730,7 @@
     <!-- ═══════════════════════════════════════════ FOOTER -->
     <footer id="footer">
         <div class="container text-center">
-            <p>© 2025 Avelino Almeida &nbsp;·&nbsp; DBA &nbsp;·&nbsp; Penafiel</p>
+            <p>&copy; 2026 Avelino Almeida &nbsp;&middot;&nbsp; DBA &nbsp;&middot;&nbsp; Penafiel</p>
         </div>
     </footer>
 
