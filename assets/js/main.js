@@ -1,113 +1,131 @@
-jQuery(window).on('load', function() {
-	"use strict";
-    
-    
-    // HIDE PRELOADER
-    $(".preloader").addClass("hide-preloader");   
-    
-    // SHOW/ANIMATE ANIMATION CONTAINER
-    setTimeout(function(){
+jQuery(window).on('load', function () {
+    'use strict';
 
-        $("#intro .animation-container").each(function() {
+    // Esconder preloader
+    $('.preloader').addClass('hide-preloader');
 
-            var e = $(this);
-
-            setTimeout(function(){
-
-                e.addClass("run-animation");
-
-            }, e.data("animation-delay") );
-
+    // Animar hero após preloader desaparecer
+    setTimeout(function () {
+        $('#hero .animation-container').each(function () {
+            var el = $(this);
+            setTimeout(function () {
+                el.addClass('run-animation');
+            }, el.data('animation-delay') || 0);
         });
-
-    }, 700 );
-
-    
+    }, 700);
 });
 
 
-jQuery(document).ready(function($) {
-	"use strict";
-    
-    
-    // SMOOTH SCROLL FOR SAME PAGE LINKS
-    $(document).on('click', 'a.smooth-scroll', function(event) {
-        
-        event.preventDefault();
+jQuery(document).ready(function ($) {
+    'use strict';
 
-        $('html, body').animate({
-            scrollTop: $( $.attr(this, 'href') ).offset().top - 80
-        }, 500);
-        
-    });
-    
-    
-    // SCROLL REVEAL SETUP
-    window.sr = ScrollReveal();
-    sr.reveal(".scroll-animated-from-right", { 
-        duration: 600,
-        delay: 0,
-        origin: "right",
-        rotate: { x: 0, y: 0, z: 0 },
-        opacity: 0,
-        distance: "20vh",
-        viewFactor: 0.4,
-        scale: 1,
-    });
-    
-    
-    // AJAX CONTACT FORM SUBMIT
-    $("#contact-form").submit(function(e) {
 
+    // ── Smooth scroll ───────────────────────────────────────
+    $(document).on('click', 'a.smooth-scroll', function (e) {
         e.preventDefault();
-        var postdata = $(this).serialize();
+        var target = $.attr(this, 'href');
+        if (!$(target).length) return;
+        $('html, body').animate({
+            scrollTop: $(target).offset().top - 68
+        }, 600);
+        // Fechar menu mobile se aberto
+        $('#nav-menu').removeClass('open');
+    });
 
-        $.ajax({
 
-            type: "POST",
-            url: "assets/php/contact.php",
-            data: postdata,
-            dataType: "json",
-            success: function(json) {
+    // ── Navbar: transparente → sólida no scroll ─────────────
+    $(window).on('scroll', function () {
+        if ($(this).scrollTop() > 60) {
+            $('#navbar').addClass('scrolled');
+        } else {
+            $('#navbar').removeClass('scrolled');
+        }
+    });
 
-                $("#contact-form input, #contact-form textarea").removeClass("error");
 
-                setTimeout(function(){
+    // ── Menu mobile toggle ──────────────────────────────────
+    $('#nav-toggle').on('click', function () {
+        $('#nav-menu').toggleClass('open');
+    });
 
-                    if (json.nameMessage !== "") {
+    // Fechar menu ao clicar fora
+    $(document).on('click', function (e) {
+        if (!$(e.target).closest('#navbar').length) {
+            $('#nav-menu').removeClass('open');
+        }
+    });
 
-                        $("#contact-form-name").addClass("error");
 
-                    }
+    // ── ScrollReveal ────────────────────────────────────────
+    if (typeof ScrollReveal !== 'undefined') {
+        var sr = ScrollReveal();
 
-                    if (json.emailMessage !== "") {
-
-                        $("#contact-form-email").addClass("error");
-
-                    }
-
-                    if (json.messageMessage !== "") {
-
-                        $("#contact-form-message").addClass("error");
-
-                    }
-
-                }, 10);
-
-                if (json.nameMessage === "" && json.emailMessage === "" && json.messageMessage === "") {
-
-                    $("#contact-form.error input, #contact-form.error textarea").removeClass("error");
-                    $('#contact-form').addClass("success");
-                    $('#contact-form textarea, #contact-form input').attr("placeholder","");
-                    $('#contact-form input, #contact-form button, #contact-form textarea').val('').prop('disabled', true);
-
-                }
-
-            }
-
+        sr.reveal('.reveal', {
+            duration: 700,
+            delay:    100,
+            origin:   'bottom',
+            distance: '36px',
+            opacity:  0,
+            scale:    1,
+            viewFactor: 0.15,
+            reset:    false
         });
 
+        sr.reveal('.reveal-left', {
+            duration: 700,
+            delay:    100,
+            origin:   'left',
+            distance: '48px',
+            opacity:  0,
+            scale:    1,
+            viewFactor: 0.15,
+            reset:    false
+        });
+
+        sr.reveal('.reveal-right', {
+            duration: 700,
+            delay:    150,
+            origin:   'right',
+            distance: '48px',
+            opacity:  0,
+            scale:    1,
+            viewFactor: 0.15,
+            reset:    false
+        });
+
+        // Escalonar cards individualmente
+        sr.reveal('.skill-card', {
+            duration:  600,
+            origin:    'bottom',
+            distance:  '28px',
+            opacity:   0,
+            scale:     1,
+            interval:  80,
+            viewFactor: 0.1,
+            reset:     false
+        });
+
+        sr.reveal('.btt-icon-card', {
+            duration:  600,
+            origin:    'bottom',
+            distance:  '24px',
+            opacity:   0,
+            scale:     1,
+            interval:  100,
+            viewFactor: 0.1,
+            reset:     false
+        });
+    }
+
+
+    // ── Formulário de contacto (Formspree) ──────────────────
+    // O Formspree trata o envio nativamente.
+    // Este bloco apenas dá feedback visual enquanto o formulário
+    // está a ser submetido.
+    $('#contact-form').on('submit', function () {
+        var btn = $(this).find('button[type="submit"]');
+        btn.text('A enviar…').prop('disabled', true);
     });
 
-    
+
 });
