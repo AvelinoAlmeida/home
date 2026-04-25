@@ -1,131 +1,131 @@
-jQuery(window).on('load', function () {
-    'use strict';
+/* ─── Preloader ─────────────────────────────────────────────── */
 
-    // Esconder preloader
-    $('.preloader').addClass('hide-preloader');
+window.addEventListener('load', () => {
+    document.getElementById('preloader')?.classList.add('hide');
 
-    // Animar hero após preloader desaparecer
-    setTimeout(function () {
-        $('#hero .animation-container').each(function () {
-            var el = $(this);
-            setTimeout(function () {
-                el.addClass('run-animation');
-            }, el.data('animation-delay') || 0);
-        });
-    }, 700);
+    // Animar elementos do hero com delay escalonado
+    document.querySelectorAll('#hero .reveal-up').forEach(el => {
+        const delay = parseInt(el.style.getPropertyValue('--d') || '0', 10);
+        setTimeout(() => el.classList.add('visible'), 200 + delay);
+    });
 });
 
 
-jQuery(document).ready(function ($) {
-    'use strict';
+/* ─── Navbar: transparente → sólida ao scroll ───────────────── */
+
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', () => {
+    navbar?.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
 
 
-    // ── Smooth scroll ───────────────────────────────────────
-    $(document).on('click', 'a.smooth-scroll', function (e) {
+/* ─── Fechar menu mobile ao clicar num link ─────────────────── */
+
+document.querySelectorAll('#navMenu .nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        const collapse = document.getElementById('navMenu');
+        if (collapse?.classList.contains('show')) {
+            // Bootstrap 5: fechar o colapso programaticamente
+            const bsCollapse = bootstrap.Collapse.getInstance(collapse);
+            bsCollapse?.hide();
+        }
+    });
+});
+
+
+/* ─── Smooth scroll (links âncora) ─────────────────────────── */
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (!target) return;
         e.preventDefault();
-        var target = $.attr(this, 'href');
-        if (!$(target).length) return;
-        $('html, body').animate({
-            scrollTop: $(target).offset().top - 68
-        }, 600);
-        // Fechar menu mobile se aberto
-        $('#nav-menu').removeClass('open');
+        const offset = navbar ? navbar.offsetHeight + 8 : 0;
+        window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
     });
+});
 
 
-    // ── Navbar: transparente → sólida no scroll ─────────────
-    $(window).on('scroll', function () {
-        if ($(this).scrollTop() > 60) {
-            $('#navbar').addClass('scrolled');
+/* ─── Intersection Observer — animações de scroll ───────────── */
+
+const revealObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+);
+
+// Observar todos os elementos fora do hero (esses são ativados no load)
+document.querySelectorAll('[class*="reveal-"]:not(#hero *)').forEach(el => {
+    revealObserver.observe(el);
+});
+
+
+/* ─── Barras de sustentabilidade ────────────────────────────── */
+
+const barObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.querySelectorAll('.bar-fill').forEach(bar => {
+                    bar.style.width = bar.dataset.target + '%';
+                });
+                barObserver.unobserve(entry.target);
+            }
+        });
+    },
+    { threshold: 0.3 }
+);
+
+const sustainCard = document.querySelector('.sustain-card');
+if (sustainCard) barObserver.observe(sustainCard);
+
+
+/* ─── Formulário — Web3Forms (fetch assíncrono) ─────────────── */
+
+const form       = document.getElementById('contact-form');
+const submitBtn  = document.getElementById('submit-btn');
+const btnText    = submitBtn?.querySelector('.btn-text');
+const btnLoading = submitBtn?.querySelector('.btn-loading');
+const fSuccess   = document.getElementById('form-success');
+const fError     = document.getElementById('form-error');
+
+form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Mostrar estado de carregamento
+    submitBtn.disabled = true;
+    btnText?.classList.add('d-none');
+    btnLoading?.classList.remove('d-none');
+    fSuccess?.classList.add('d-none');
+    fError?.classList.add('d-none');
+
+    try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(Object.fromEntries(new FormData(form)))
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+            fSuccess?.classList.remove('d-none');
+            form.reset();
         } else {
-            $('#navbar').removeClass('scrolled');
+            throw new Error(data.message || 'Erro desconhecido');
         }
-    });
-
-
-    // ── Menu mobile toggle ──────────────────────────────────
-    $('#nav-toggle').on('click', function () {
-        $('#nav-menu').toggleClass('open');
-    });
-
-    // Fechar menu ao clicar fora
-    $(document).on('click', function (e) {
-        if (!$(e.target).closest('#navbar').length) {
-            $('#nav-menu').removeClass('open');
-        }
-    });
-
-
-    // ── ScrollReveal ────────────────────────────────────────
-    if (typeof ScrollReveal !== 'undefined') {
-        var sr = ScrollReveal();
-
-        sr.reveal('.reveal', {
-            duration: 700,
-            delay:    100,
-            origin:   'bottom',
-            distance: '36px',
-            opacity:  0,
-            scale:    1,
-            viewFactor: 0.15,
-            reset:    false
-        });
-
-        sr.reveal('.reveal-left', {
-            duration: 700,
-            delay:    100,
-            origin:   'left',
-            distance: '48px',
-            opacity:  0,
-            scale:    1,
-            viewFactor: 0.15,
-            reset:    false
-        });
-
-        sr.reveal('.reveal-right', {
-            duration: 700,
-            delay:    150,
-            origin:   'right',
-            distance: '48px',
-            opacity:  0,
-            scale:    1,
-            viewFactor: 0.15,
-            reset:    false
-        });
-
-        // Escalonar cards individualmente
-        sr.reveal('.skill-card', {
-            duration:  600,
-            origin:    'bottom',
-            distance:  '28px',
-            opacity:   0,
-            scale:     1,
-            interval:  80,
-            viewFactor: 0.1,
-            reset:     false
-        });
-
-        sr.reveal('.btt-icon-card', {
-            duration:  600,
-            origin:    'bottom',
-            distance:  '24px',
-            opacity:   0,
-            scale:     1,
-            interval:  100,
-            viewFactor: 0.1,
-            reset:     false
-        });
+    } catch {
+        fError?.classList.remove('d-none');
+    } finally {
+        submitBtn.disabled = false;
+        btnText?.classList.remove('d-none');
+        btnLoading?.classList.add('d-none');
     }
-
-
-    // ── Formulário de contacto (Formspree) ──────────────────
-    // O Formspree trata o envio nativamente.
-    // Este bloco apenas dá feedback visual enquanto o formulário
-    // está a ser submetido.
-    $('#contact-form').on('submit', function () {
-        var btn = $(this).find('button[type="submit"]');
-        btn.text('A enviar…').prop('disabled', true);
-    });
-
-
 });

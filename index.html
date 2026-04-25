@@ -4,257 +4,581 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Avelino Almeida — Database Administrator, natural de Penafiel, apaixonado por BTT.">
-    <meta name="robots" content="index, follow">
+    <meta name="description" content="Avelino Almeida — Database Administrator, natural de Penafiel, apaixonado por BTT e KTM.">
 
     <title>Avelino Almeida · DBA</title>
 
     <link rel="shortcut icon" href="assets/img/favicon.png">
 
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Arapey:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Performance: preconnect para CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
-    <link rel="stylesheet" href="assets/css/plugins.css">
+    <!-- Google Fonts (apenas o essencial) -->
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" rel="stylesheet">
+
+    <!-- Devicon — ícones de tecnologias -->
+    <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" rel="stylesheet">
+
+    <!-- Estilos personalizados -->
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body>
 
-    <!-- PRELOADER -->
-    <div class="preloader">
-        <div class="spinner"></div>
+    <!-- ═══════════════════════════════════════════ PRELOADER -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <svg class="logo-svg" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+                <rect width="56" height="56" rx="14" fill="#2563EB"/>
+                <text x="28" y="40" text-anchor="middle" font-family="'Abril Fatface',serif"
+                      font-size="28" fill="#fff" letter-spacing="-1">AA</text>
+            </svg>
+        </div>
     </div>
 
-    <!-- NAVBAR -->
-    <nav id="navbar">
-        <div class="nav-inner">
-            <a class="nav-logo smooth-scroll" href="#hero">AA</a>
-            <button id="nav-toggle" aria-label="Abrir menu">
-                <span></span><span></span><span></span>
+    <!-- ═══════════════════════════════════════════ NAVBAR -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+
+            <!-- Logótipo AA -->
+            <a class="navbar-brand" href="#hero">
+                <svg viewBox="0 0 48 48" width="40" height="40" xmlns="http://www.w3.org/2000/svg" aria-label="AA">
+                    <rect width="48" height="48" rx="12" fill="#2563EB"/>
+                    <text x="24" y="35" text-anchor="middle" font-family="'Abril Fatface',serif"
+                          font-size="24" fill="#fff" letter-spacing="-1">AA</text>
+                </svg>
+            </a>
+
+            <!-- Toggle mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navMenu" aria-controls="navMenu"
+                    aria-expanded="false" aria-label="Abrir menu">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <ul id="nav-menu">
-                <li><a href="#about" class="smooth-scroll">Sobre</a></li>
-                <li><a href="#skills" class="smooth-scroll">Competências</a></li>
-                <li><a href="#btt" class="smooth-scroll">BTT</a></li>
-                <li><a href="#contact" class="smooth-scroll">Contacto</a></li>
-            </ul>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="#about">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Competências</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#btt">BTT</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <!-- HERO -->
+    <!-- ═══════════════════════════════════════════ HERO -->
     <section id="hero">
         <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="animation-container animation-fade-down" data-animation-delay="0">
-                <span class="hero-tag">DBA &nbsp;·&nbsp; Penafiel &nbsp;·&nbsp; BTT</span>
-            </div>
-            <div class="animation-container animation-fade-down" data-animation-delay="200">
-                <h1>Avelino<br>Almeida</h1>
-            </div>
-            <div class="animation-container animation-fade-up" data-animation-delay="450">
-                <p class="hero-sub">Database Administrator com paixão por tecnologia<br>e aventura nas montanhas do norte de Portugal.</p>
-            </div>
-            <div class="animation-container animation-fade-up" data-animation-delay="650">
-                <div class="hero-cta">
-                    <a href="#about" class="btn btn-primary smooth-scroll">Saiba Mais</a>
-                    <a href="https://www.linkedin.com/in/avelinoalmeida/" class="btn btn-outline" target="_blank" rel="noopener">LinkedIn</a>
-                </div>
+        <div class="hero-content text-center">
+            <span class="hero-tag reveal-up" style="--d:0ms">DBA &nbsp;·&nbsp; Penafiel &nbsp;·&nbsp; BTT</span>
+            <h1 class="hero-title reveal-up" style="--d:180ms">Avelino<br>Almeida</h1>
+            <p class="hero-sub reveal-up" style="--d:360ms">
+                Database Administrator com paixão por tecnologia<br class="d-none d-md-block">
+                e aventura nas montanhas do norte de Portugal.
+            </p>
+            <div class="hero-cta reveal-up" style="--d:520ms">
+                <a href="#about" class="btn btn-primary btn-hero">Saiba Mais</a>
+                <a href="https://www.linkedin.com/in/avelinoalmeida/" class="btn btn-outline-light btn-hero"
+                   target="_blank" rel="noopener">LinkedIn</a>
             </div>
         </div>
-        <a href="#about" class="hero-scroll smooth-scroll" aria-label="Scroll para baixo">
-            <i class="fa fa-angle-down" aria-hidden="true"></i>
+        <a href="#about" class="hero-scroll" aria-label="Scroll">
+            <i class="fa-solid fa-angle-down"></i>
         </a>
     </section>
 
-    <!-- ABOUT -->
+    <!-- ═══════════════════════════════════════════ SOBRE — Penafiel -->
+    <!--
+        IMAGEM: Descarregue uma foto do Sameiro de Penafiel (ex. Wikimedia Commons)
+        e guarde em: assets/img/sameiro.jpg
+        Enquanto não existir, será mostrado o gradiente de fundo.
+    -->
     <section id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-text reveal-left">
-                    <span class="section-tag">Sobre Mim</span>
-                    <h2>Natural de Penafiel,<br>a trabalhar com dados.</h2>
-                    <p>Sou Database Administrator com foco em performance, disponibilidade e integridade de dados. A minha missão é garantir que os sistemas de base de dados funcionam de forma fiável, segura e eficiente — sejam relacionais ou NoSQL.</p>
-                    <p>Cresci em Penafiel, onde as serranias e os trilhos fazem parte do quotidiano. É nas montanhas que encontro o equilíbrio perfeito entre o rigor técnico da profissão e a liberdade do outdoor.</p>
-                    <div class="about-badges">
-                        <span class="badge"><i class="fa fa-map-marker" aria-hidden="true"></i> Penafiel, Portugal</span>
-                        <span class="badge"><i class="fa fa-database" aria-hidden="true"></i> Database Administrator</span>
-                        <span class="badge accent"><i class="fa fa-bicycle" aria-hidden="true"></i> BTT &amp; MTB</span>
+        <div class="about-overlay"></div>
+        <div class="container position-relative" style="z-index:1">
+
+            <div class="row align-items-center g-5">
+                <!-- Texto pessoal -->
+                <div class="col-lg-6">
+                    <span class="section-tag light reveal-left">Sobre Mim</span>
+                    <h2 class="section-title light reveal-left">Natural de Penafiel,<br>a trabalhar com dados.</h2>
+                    <p class="text-light-muted reveal-left">
+                        Sou Database Administrator com foco em performance, disponibilidade e
+                        integridade de dados. A minha missão é garantir que os sistemas de base de
+                        dados funcionam de forma fiável, segura e eficiente.
+                    </p>
+                    <p class="text-light-muted reveal-left">
+                        Cresci em Penafiel, onde as serranias e os trilhos fazem parte do quotidiano.
+                        É nas montanhas que encontro o equilíbrio entre o rigor técnico da profissão
+                        e a liberdade do outdoor.
+                    </p>
+                    <div class="about-badges reveal-left">
+                        <span class="badge-pill"><i class="fa-solid fa-location-dot"></i> Penafiel</span>
+                        <span class="badge-pill"><i class="fa-solid fa-database"></i> DBA</span>
+                        <span class="badge-pill accent"><i class="fa-solid fa-bicycle"></i> BTT</span>
                     </div>
                 </div>
-                <div class="about-cards reveal-right">
-                    <div class="info-card">
-                        <div class="info-card-icon"><i class="fa fa-database" aria-hidden="true"></i></div>
-                        <div>
-                            <h4>DBA</h4>
-                            <p>Gestão e otimização de bases de dados relacionais e NoSQL</p>
+
+                <!-- Lugares de Penafiel -->
+                <div class="col-lg-6">
+                    <span class="section-tag light reveal-right">Penafiel</span>
+                    <h3 class="section-title light reveal-right" style="font-size:2.8rem">
+                        Lugares para Descobrir
+                    </h3>
+                    <div class="places-list reveal-right">
+                        <div class="place-item">
+                            <div class="place-icon"><i class="fa-solid fa-water"></i></div>
+                            <div>
+                                <h5>Termas de S. Vicente de Pinheiro</h5>
+                                <p>Águas termais com reconhecidas propriedades terapêuticas, num vale sereno do concelho.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-card-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-                        <div>
-                            <h4>Penafiel</h4>
-                            <p>Coração do Douro Litoral, norte de Portugal</p>
+                        <div class="place-item">
+                            <div class="place-icon"><i class="fa-solid fa-church"></i></div>
+                            <div>
+                                <h5>Sameiro de Penafiel</h5>
+                                <p>Santuário mariano com vistas panorâmicas deslumbrantes sobre o Vale do Sousa.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="info-card accent">
-                        <div class="info-card-icon"><i class="fa fa-bicycle" aria-hidden="true"></i></div>
-                        <div>
-                            <h4>BTT</h4>
-                            <p>Trilhos, montanha e aventura — Bicicleta Todo-o-Terreno</p>
+                        <div class="place-item">
+                            <div class="place-icon"><i class="fa-solid fa-landmark"></i></div>
+                            <div>
+                                <h5>Museu Municipal de Penafiel</h5>
+                                <p>Um dos maiores acervos arqueológicos do norte de Portugal, com peças da cultura castreja.</p>
+                            </div>
+                        </div>
+                        <div class="place-item">
+                            <div class="place-icon"><i class="fa-solid fa-wine-bottle"></i></div>
+                            <div>
+                                <h5>Vale do Sousa e Vinho Verde</h5>
+                                <p>Paisagens vinhateiras e percursos de BTT por quintas seculares do Douro Litoral.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- SKILLS -->
+    <!-- ═══════════════════════════════════════════ COMPETÊNCIAS — DBA -->
+    <!--
+        IMAGEM: Descarregue uma foto de sala de servidores (ex. Unsplash: search "server room")
+        e guarde em: assets/img/servers.jpg
+    -->
     <section id="skills">
-        <div class="container">
-            <div class="section-header reveal">
+        <div class="skills-overlay"></div>
+        <div class="container position-relative" style="z-index:1">
+
+            <div class="section-header text-center reveal-up">
                 <span class="section-tag light">Competências</span>
-                <h2>O que faço como DBA</h2>
-                <p>Administração, otimização e segurança de sistemas de bases de dados em ambientes críticos de produção.</p>
+                <h2 class="section-title light">Tecnologias & Ferramentas</h2>
+                <p class="text-light-muted">
+                    Especialização em administração e otimização de bases de dados em ambientes críticos de produção.
+                </p>
             </div>
-            <div class="skills-grid">
-                <div class="skill-card reveal">
-                    <i class="fa fa-database" aria-hidden="true"></i>
-                    <h4>Administração de BD</h4>
-                    <p>Instalação, configuração e manutenção de SGBD. Gestão de instâncias e ambientes de produção.</p>
+
+            <!-- Tabs Bootstrap -->
+            <ul class="nav nav-tabs skills-tabs justify-content-center mb-4 reveal-up" id="skillsTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-relacional"
+                            type="button" role="tab">Relacional</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-nosql"
+                            type="button" role="tab">NoSQL &amp; Cache</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-cloud"
+                            type="button" role="tab">Cloud</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-ops"
+                            type="button" role="tab">DBA &amp; Ops</button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="skillsTabContent">
+
+                <!-- Relacional -->
+                <div class="tab-pane fade show active" id="tab-relacional" role="tabpanel">
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="devicon-oracle-original colored"></i>
+                                <span>Oracle DB</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="devicon-microsoftsqlserver-plain colored"></i>
+                                <span>SQL Server</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="devicon-postgresql-plain colored"></i>
+                                <span>PostgreSQL</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="devicon-mysql-plain colored"></i>
+                                <span>MySQL</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-card reveal">
-                    <i class="fa fa-tachometer" aria-hidden="true"></i>
-                    <h4>Performance & Tuning</h4>
-                    <p>Otimização de queries, índices e planos de execução para máxima eficiência e resposta rápida.</p>
+
+                <!-- NoSQL -->
+                <div class="tab-pane fade" id="tab-nosql" role="tabpanel">
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="devicon-mongodb-plain colored"></i>
+                                <span>MongoDB</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="devicon-redis-plain colored"></i>
+                                <span>Redis</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="devicon-elasticsearch-plain colored"></i>
+                                <span>Elasticsearch</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-card reveal">
-                    <i class="fa fa-shield" aria-hidden="true"></i>
-                    <h4>Segurança de Dados</h4>
-                    <p>Controlo de acessos, encriptação, auditorias e políticas de segurança alinhadas com compliance.</p>
+
+                <!-- Cloud -->
+                <div class="tab-pane fade" id="tab-cloud" role="tabpanel">
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="devicon-azure-plain colored"></i>
+                                <span>Azure SQL</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="devicon-amazonwebservices-plain-wordmark colored"></i>
+                                <span>AWS RDS</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="devicon-googlecloud-plain colored"></i>
+                                <span>Google Cloud SQL</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-card reveal">
-                    <i class="fa fa-refresh" aria-hidden="true"></i>
-                    <h4>Backup & Recovery</h4>
-                    <p>Estratégias de backup, planos de recuperação e garantia de continuidade de negócio (RTO/RPO).</p>
+
+                <!-- DBA Ops -->
+                <div class="tab-pane fade" id="tab-ops" role="tabpanel">
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="devicon-linux-plain colored"></i>
+                                <span>Linux Server</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="devicon-bash-plain" style="color:#4ade80"></i>
+                                <span>Shell / Scripts</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="devicon-ansible-plain colored"></i>
+                                <span>Ansible</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="devicon-docker-plain colored"></i>
+                                <span>Docker</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-card reveal">
-                    <i class="fa fa-cloud" aria-hidden="true"></i>
-                    <h4>Cloud Databases</h4>
-                    <p>Gestão de bases de dados em ambientes cloud (Azure SQL, AWS RDS, Google Cloud SQL).</p>
+
+            </div><!-- /tab-content -->
+
+            <!-- Competências transversais -->
+            <div class="row g-3 mt-4">
+                <div class="col-md-4 reveal-up">
+                    <div class="skills-feat">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div>
+                            <h5>Performance & Tuning</h5>
+                            <p>Otimização de queries, índices e planos de execução para latência mínima.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-card reveal">
-                    <i class="fa fa-code" aria-hidden="true"></i>
-                    <h4>SQL & Scripting</h4>
-                    <p>SQL avançado, stored procedures, triggers, views e automação de tarefas administrativas.</p>
+                <div class="col-md-4 reveal-up">
+                    <div class="skills-feat">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <div>
+                            <h5>Segurança & Compliance</h5>
+                            <p>Controlo de acessos, encriptação e auditorias alinhadas com RGPD.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal-up">
+                    <div class="skills-feat">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <div>
+                            <h5>Backup & Recovery</h5>
+                            <p>Estratégias de backup, RTO/RPO e continuidade de negócio.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- BTT -->
+    <!-- ═══════════════════════════════════════════ BTT — KTM -->
     <section id="btt">
         <div class="container">
-            <div class="btt-grid">
-                <div class="btt-text reveal-left">
+
+            <div class="row align-items-center g-5">
+
+                <!-- Texto BTT -->
+                <div class="col-lg-6 reveal-left">
                     <span class="section-tag">Fora do Teclado</span>
-                    <h2>Nas trilhas do<br>norte de Portugal</h2>
-                    <p>O BTT é muito mais do que um desporto — é uma forma de estar na natureza, explorar as serranias e desligar do mundo digital. As trilhas em redor de Penafiel e do vale do Douro são o meu segundo lar.</p>
-                    <p>A mesma disciplina que aplico na gestão de bases de dados — atenção ao detalhe, planeamento e resiliência — é o que levo para cada trail.</p>
+                    <h2 class="section-title">Nos trilhos com a<br>KTM Macina Chacana</h2>
+                    <p>
+                        O BTT elétrico é a síntese perfeita entre tecnologia e natureza.
+                        A minha <strong>KTM Macina Chacana</strong> permite-me explorar
+                        trilhos mais longos, subidas mais exigentes e paisagens que de outra
+                        forma seriam inacessíveis — tudo isto de forma silenciosa e sustentável.
+                    </p>
+                    <p>
+                        A mesma disciplina que aplico como DBA — planeamento, atenção ao detalhe
+                        e resiliência — é o que levo para cada trail em Penafiel e no Vale do Sousa.
+                    </p>
+
+                    <!-- Tags -->
                     <div class="btt-tags">
                         <span class="tag">Trail</span>
                         <span class="tag">Enduro</span>
                         <span class="tag">Douro</span>
-                        <span class="tag">Montanha</span>
-                        <span class="tag">MTB</span>
+                        <span class="tag">Vale do Sousa</span>
+                        <span class="tag">MTB Elétrico</span>
                         <span class="tag">Penafiel</span>
                     </div>
                 </div>
-                <div class="btt-visual reveal-right">
-                    <div class="btt-icon-grid">
-                        <div class="btt-icon-card">
-                            <i class="fa fa-bicycle" aria-hidden="true"></i>
-                            <span>BTT / MTB</span>
+
+                <!-- KTM card + sustentabilidade -->
+                <div class="col-lg-6 reveal-right">
+
+                    <!-- KTM Brand Card -->
+                    <div class="ktm-card">
+                        <div class="ktm-header">
+                            <!-- Marca KTM estilizada -->
+                            <div class="ktm-logo-wrap">
+                                <div class="ktm-logo-mark">KTM</div>
+                                <div class="ktm-logo-sub">BICYCLES</div>
+                            </div>
+                            <div class="ktm-model">
+                                <span class="ktm-model-name">Macina Chacana</span>
+                                <span class="ktm-model-type">e-MTB Full Suspension</span>
+                            </div>
                         </div>
-                        <div class="btt-icon-card">
-                            <i class="fa fa-tree" aria-hidden="true"></i>
-                            <span>Natureza</span>
-                        </div>
-                        <div class="btt-icon-card">
-                            <i class="fa fa-map-o" aria-hidden="true"></i>
-                            <span>Trilhos</span>
-                        </div>
-                        <div class="btt-icon-card">
-                            <i class="fa fa-sun-o" aria-hidden="true"></i>
-                            <span>Outdoor</span>
+                        <div class="ktm-specs row g-2 mt-3">
+                            <div class="col-6">
+                                <div class="ktm-spec">
+                                    <i class="fa-solid fa-bolt"></i>
+                                    <span class="ktm-spec-label">Motor</span>
+                                    <span class="ktm-spec-val">Bosch Performance CX</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="ktm-spec">
+                                    <i class="fa-solid fa-battery-full"></i>
+                                    <span class="ktm-spec-label">Bateria</span>
+                                    <span class="ktm-spec-val">625 Wh</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="ktm-spec">
+                                    <i class="fa-solid fa-mountain"></i>
+                                    <span class="ktm-spec-label">Geometria</span>
+                                    <span class="ktm-spec-val">Trail / Enduro</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="ktm-spec">
+                                    <i class="fa-solid fa-leaf"></i>
+                                    <span class="ktm-spec-label">Emissões locais</span>
+                                    <span class="ktm-spec-val">Zero</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Sustentabilidade -->
+                    <div class="sustain-card mt-3">
+                        <div class="sustain-title">
+                            <i class="fa-solid fa-seedling"></i>
+                            Sustentabilidade da e-Bike vs. Automóvel
+                        </div>
+                        <div class="sustain-bars">
+                            <div class="sustain-bar-item">
+                                <span class="sustain-label">
+                                    <i class="fa-solid fa-bicycle"></i> e-MTB
+                                </span>
+                                <div class="bar-track">
+                                    <div class="bar-fill green" style="width:14%" data-target="14"></div>
+                                </div>
+                                <span class="sustain-val">~21 g CO₂/km</span>
+                            </div>
+                            <div class="sustain-bar-item">
+                                <span class="sustain-label">
+                                    <i class="fa-solid fa-car"></i> Automóvel
+                                </span>
+                                <div class="bar-track">
+                                    <div class="bar-fill red" style="width:100%" data-target="100"></div>
+                                </div>
+                                <span class="sustain-val">~150 g CO₂/km</span>
+                            </div>
+                        </div>
+                        <p class="sustain-note">
+                            A e-bike emite até <strong>7× menos CO₂</strong> que um carro, preserva os
+                            trilhos com zero ruído e zero emissões locais.
+                        </p>
+                    </div>
+
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- ═══════════════════════════════════════════ CONTACTO -->
     <section id="contact">
         <div class="container">
-            <div class="section-header reveal">
+
+            <div class="section-header text-center reveal-up">
                 <span class="section-tag light">Contacto</span>
-                <h2>Entre em Contacto</h2>
-                <p>Tem um projeto de bases de dados ou quer trocar ideias sobre trilhos de BTT? Fale comigo.</p>
+                <h2 class="section-title light">Entre em Contacto</h2>
+                <p class="text-light-muted">
+                    Tem um projeto de bases de dados ou quer trocar ideias sobre trilhos de BTT?
+                </p>
             </div>
-            <div class="contact-grid">
-                <div class="contact-info reveal-left">
+
+            <div class="row g-5">
+
+                <!-- Info -->
+                <div class="col-lg-4 reveal-left">
                     <ul class="contact-list">
                         <li>
-                            <span class="contact-icon"><i class="fa fa-mobile" aria-hidden="true"></i></span>
+                            <span class="contact-icon"><i class="fa-solid fa-mobile-screen-button"></i></span>
                             <span>+351 916 472 603</span>
                         </li>
                         <li>
-                            <span class="contact-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                            <span class="contact-icon"><i class="fa-regular fa-envelope"></i></span>
                             <span>avlalmeida@gmail.com</span>
                         </li>
                         <li>
-                            <span class="contact-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                            <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
                             <span>Penafiel, Portugal</span>
                         </li>
                     </ul>
-                    <ul class="social-icons">
-                        <li><a href="https://www.linkedin.com/in/avelinoalmeida/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                        <li><a href="https://github.com/AvelinoAlmeida/avelinoperfil" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-                        <li><a href="https://www.instagram.com/avelino_almeida/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                        <li><a href="https://twitter.com/avlalmeida" target="_blank" rel="noopener" aria-label="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="https://www.facebook.com/avelino.almeida.83/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    </ul>
+
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/avelinoalmeida/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/AvelinoAlmeida/avelinoperfil" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://www.instagram.com/avelino_almeida/" target="_blank" rel="noopener" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://twitter.com/avlalmeida" target="_blank" rel="noopener" aria-label="Twitter / X">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.facebook.com/avelino.almeida.83/" target="_blank" rel="noopener" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
                 </div>
 
+                <!-- Formulário — Web3Forms (gratuito, sem backend) -->
                 <!--
-                    FORMSPREE — formulário compatível com GitHub Pages:
-                    1. Crie conta gratuita em formspree.io
-                    2. Crie um novo Form e copie o seu ID (ex: xyzabcde)
-                    3. Substitua YOUR_FORM_ID pelo ID obtido
-                    4. Verifique o email de confirmação da Formspree
+                    WEB3FORMS SETUP (100% gratuito, 250 envios/mês):
+                    1. Aceda a https://web3forms.com
+                    2. Introduza o seu email → recebe uma chave de acesso
+                    3. Confirme o email
+                    4. Substitua YOUR_ACCESS_KEY abaixo pela chave recebida
                 -->
-                <form id="contact-form" class="reveal-right"
-                      action="https://formspree.io/f/YOUR_FORM_ID"
-                      method="POST">
-                    <input type="hidden" name="_subject" value="Contacto via avelinoalmeida.github.io">
-                    <input type="text"  name="name"    placeholder="* Nome"     required>
-                    <input type="email" name="email"   placeholder="* Email"    required>
-                    <textarea           name="message" placeholder="* Mensagem" required></textarea>
-                    <button type="submit">
-                        Enviar Mensagem <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-                    </button>
-                </form>
+                <div class="col-lg-8 reveal-right">
+                    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+                        <input type="hidden" name="access_key" value="c298b872-baf8-486a-abd9-abb22dd241b7">
+                        <input type="hidden" name="subject" value="Contacto via avelinoalmeida.github.io">
+                        <input type="hidden" name="from_name" value="Website Avelino">
+                        <input type="checkbox" name="botcheck" style="display:none">
+
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <input type="text" name="name" class="form-ctrl" placeholder="* Nome" required>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="email" name="email" class="form-ctrl" placeholder="* Email" required>
+                            </div>
+                            <div class="col-12">
+                                <textarea name="message" class="form-ctrl" rows="5"
+                                          placeholder="* Mensagem" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn-send" id="submit-btn">
+                                    <span class="btn-text">Enviar Mensagem <i class="fa-regular fa-paper-plane"></i></span>
+                                    <span class="btn-loading d-none">
+                                        <span class="spinner-border spinner-border-sm"></span> A enviar…
+                                    </span>
+                                </button>
+                                <div id="form-success" class="form-success d-none">
+                                    <i class="fa-solid fa-circle-check"></i> Mensagem enviada com sucesso!
+                                </div>
+                                <div id="form-error" class="form-error d-none">
+                                    <i class="fa-solid fa-circle-exclamation"></i> Erro ao enviar. Tente novamente.
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ═══════════════════════════════════════════ FOOTER -->
     <footer id="footer">
-        <div class="container">
+        <div class="container text-center">
             <p>© 2025 Avelino Almeida &nbsp;·&nbsp; DBA &nbsp;·&nbsp; Penafiel</p>
         </div>
     </footer>
 
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/main.js"></script>
+    <!-- Bootstrap 5 JS (defer = não bloqueia renderização) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <!-- JS personalizado -->
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>
