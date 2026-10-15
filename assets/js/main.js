@@ -67,26 +67,6 @@ document.querySelectorAll('[class*="reveal-"]:not(#hero *)').forEach(el => {
 });
 
 
-/* ─── Barras de sustentabilidade ────────────────────────────── */
-
-const barObserver = new IntersectionObserver(
-    (entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.querySelectorAll('.bar-fill').forEach(bar => {
-                    bar.style.width = bar.dataset.target + '%';
-                });
-                barObserver.unobserve(entry.target);
-            }
-        });
-    },
-    { threshold: 0.3 }
-);
-
-const sustainCard = document.querySelector('.sustain-card');
-if (sustainCard) barObserver.observe(sustainCard);
-
-
 /* ─── Formulário — Web3Forms (fetch assíncrono) ─────────────── */
 
 const form       = document.getElementById('contact-form');
