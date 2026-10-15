@@ -35,10 +35,13 @@ window.HOBBIES = {
     ],
 
     fotos: {
+        // { foto: 'assets/img/hobbies/AAAA-MM-DD-descricao.jpg', legenda: 'Texto da legenda' }
         confraria: [
-            // { foto: 'assets/img/hobbies/AAAA-MM-DD-confraria.jpg', legenda: 'Texto da legenda' }
+            { foto: 'assets/img/hobbies/confraria-grupo.jpg', legenda: 'Confraria dos Irmãos mais Velhos' }
         ],
-        futebol: [],
+        futebol: [
+            { foto: 'assets/img/hobbies/futebol-formacao.jpg', legenda: 'Futebol de formação' }
+        ],
         gaming: []
     }
 };
