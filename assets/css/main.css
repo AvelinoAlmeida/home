@@ -961,8 +961,7 @@ section {
     height: 12rem;
     margin-bottom: 2rem;
     border-radius: 50%;
-    object-fit: cover;
-    object-position: 50% 12%;
+    background: url("../img/background.jpg") -3.8rem 0 / 150% auto no-repeat;
     border: 3px solid rgba(147, 197, 253, 0.4);
     box-shadow: var(--shadow);
 }
