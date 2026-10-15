@@ -956,6 +956,17 @@ section {
     -webkit-backdrop-filter: blur(8px);
 }
 
+.contact-avatar {
+    width: 12rem;
+    height: 12rem;
+    margin-bottom: 2rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 12%;
+    border: 3px solid rgba(147, 197, 253, 0.4);
+    box-shadow: var(--shadow);
+}
+
 .contact-card-tag {
     display: inline-flex;
     margin-bottom: 1.2rem;
