@@ -1185,6 +1185,75 @@ section {
     color: var(--text-soft);
 }
 
+#formacao {
+    position: relative;
+    padding: 11rem 0;
+    background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.06), transparent 20%),
+        linear-gradient(180deg, #f8fafc 0%, #eef3f9 100%);
+}
+
+#formacao .section-title {
+    color: var(--text-title);
+}
+
+.formacao-card {
+    height: 100%;
+    padding: 2.8rem;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.84);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: var(--shadow-sm);
+}
+
+.formacao-card-title {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-title);
+}
+
+.formacao-card-title i {
+    color: var(--primary);
+}
+
+.formacao-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.formacao-item {
+    padding-left: 1.6rem;
+    border-left: 3px solid var(--light-3);
+}
+
+.formacao-period {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--primary-strong);
+}
+
+.formacao-item h5 {
+    font-size: 1.6rem;
+    color: var(--text-title);
+    margin-bottom: 0.4rem;
+}
+
+.formacao-item p {
+    margin: 0;
+    font-size: 1.42rem;
+    color: var(--text-body);
+}
+
 #contact {
     position: relative;
     padding: 11rem 0;
@@ -1470,7 +1539,8 @@ textarea.form-ctrl {
     .contact-panel,
     .hero-panel,
     .exp-current,
-    .sustain-card {
+    .sustain-card,
+    .formacao-card {
         padding: 2.2rem;
     }
 
@@ -1486,6 +1556,7 @@ textarea.form-ctrl {
     #about,
     #skills,
     #lazer,
+    #formacao,
     #contact {
         padding: 8.5rem 0;
     }
