@@ -15,10 +15,10 @@
 window.HOBBIES = {
 
     btt: {
-        km: 526,
-        dplus: 8360,
-        fonte: 'Komoot',
-        atualizado: '2026-09'
+        km: 896.2,
+        dplus: 19415,
+        fonte: 'Strava',
+        atualizado: '2026-10'
     },
 
     aventuras: [
