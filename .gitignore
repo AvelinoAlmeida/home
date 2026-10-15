@@ -1,2 +1,13 @@
 .idea/
 fotos/
+
+# LaTeX (cv_2026): ficheiros de compilação
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.xdv
+*.toc
+cv_2026/*.pdf

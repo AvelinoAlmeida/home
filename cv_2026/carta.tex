@@ -1,0 +1,59 @@
+% =============================================================================
+%  Carta de Apresentação, Avelino Almeida, 2026
+%  Compilar no Overleaf com XeLaTeX. Para compilar a carta em vez do CV,
+%  definir este ficheiro como principal (Menu > Main document > carta.tex).
+%  Por candidatura: preencher dados/candidatura.tex e o parágrafo
+%  "Porquê esta empresa" abaixo.
+% =============================================================================
+\documentclass[11pt]{article}
+\usepackage[a4paper,left=2cm,right=2cm,top=1.4cm,bottom=1.6cm]{geometry}
+\usepackage{estilo/cvestilo}
+\input{dados/pessoais}
+\input{dados/candidatura}
+
+\hypersetup{pdftitle={Avelino Almeida - Carta de Apresentação},pdfauthor={Avelino Almeida}}
+\setlength{\parskip}{7pt}
+\fancyfoot[C]{\footnotesize\color{cinzaclaro}Avelino Almeida \textperiodcentered{} Carta de Apresentação}
+
+\color{texto}
+\begin{document}
+\raggedright
+\cabecalho
+\vspace{6pt}
+
+% --- Destinatário, data e assunto --------------------------------------------
+{\robotobold \destinatario}\\
+{\color{cinza}\empresa\\ \moradaempresa}
+
+\vspace{2pt}
+{\color{cinza}Penafiel, \datapt}
+
+{\robotobold Assunto:} Candidatura a \funcao{} (ref.\ \referencia)
+
+\saudacao
+
+% --- Corpo -------------------------------------------------------------------
+\secao{Sobre mim}
+Sou Consultor DBA na eSPap, onde administro ambientes SQL Server on-premises e em Azure, integrado numa equipa de três DBA responsável por um parque de grande escala da Administração Pública. O meu dia a dia passa pela manutenção preventiva, pela monitorização e análise de desempenho, pela gestão de cópias de segurança e recuperação de dados, e pela administração dos servidores de SSIS, SSAS e SSRS.
+
+Antes disso, na ULS Tâmega e Sousa, desenvolvi um protótipo de Business Intelligence para o projeto-piloto de saúde mental CRI-SM, do data warehouse em SQL Server ao modelo dimensional e aos painéis em Power BI. Em paralelo, sou formador certificado há cinco anos e frequento o Mestrado em Engenharia Informática no Politécnico do Porto.
+
+\secao{Porquê esta empresa}
+\pf{Duas ou três frases específicas para esta candidatura: o que conhece da empresa, o projeto, o setor ou a tecnologia referidos na oferta, e porque encaixam no seu percurso. Exemplo de estrutura: «Acompanho o trabalho da empresa em X. A oferta refere Y, que corresponde ao que faço hoje com Z.»}
+
+\secao{Porquê eu}
+Trago três contributos. Experiência operacional em SQL Server de produção, num contexto em que a disponibilidade e a recuperação dos dados são críticas. Capacidade de levar os dados até à decisão, da modelação dimensional aos dashboards em Power BI. E o hábito de explicar temas técnicos a públicos diferentes, consolidado em mais de 1000 horas de formação.
+
+A isto junto 17 anos na indústria, sete deles a coordenar uma equipa, onde aprendi a gerir prazos, prioridades e pessoas.
+
+Agradeço a atenção dispensada e fico disponível para uma conversa, presencial ou remota, quando for conveniente.
+
+Com os melhores cumprimentos,
+
+\vspace{14pt}
+{\robotobold \CVnome{} \CVapelido}
+
+\vfill
+{\small\color{cinza}{\robotobold Anexo:} Curriculum Vitae}
+
+\end{document}
