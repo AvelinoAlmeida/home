@@ -644,7 +644,8 @@ section {
     position: relative;
     padding: 11rem 0;
     background:
-        linear-gradient(180deg, rgba(6, 11, 21, 0.97) 0%, rgba(9, 16, 32, 0.98) 100%);
+        linear-gradient(180deg, rgba(6, 11, 21, 0.9) 0%, rgba(9, 16, 32, 0.94) 100%),
+        url("../img/work/item-1.jpg") center / cover no-repeat;
 }
 
 #skills::before {
