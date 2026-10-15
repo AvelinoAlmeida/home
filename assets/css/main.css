@@ -309,6 +309,18 @@ section {
     background: rgba(255, 255, 255, 0.08);
 }
 
+#navbar .nav-link-hobbies {
+    color: #fdba74;
+    border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+#navbar .nav-link-hobbies:hover,
+#navbar .nav-link-hobbies:focus {
+    color: #fff;
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
 @media (max-width: 991px) {
     #navbar .navbar-collapse.show,
     #navbar .navbar-collapse.collapsing {
