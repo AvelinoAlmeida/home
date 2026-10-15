@@ -55,7 +55,7 @@
                     <li class="nav-item"><a class="nav-link" href="#confraria">Confraria</a></li>
                     <li class="nav-item"><a class="nav-link" href="#futebol">Futebol</a></li>
                     <li class="nav-item"><a class="nav-link" href="#gaming">Gaming</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#redes">Redes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#redes">Redes Sociais</a></li>
                     <li class="nav-item"><a class="nav-link hb-back" href="index.html"><i class="fa-solid fa-arrow-left"></i> Perfil</a></li>
                 </ul>
             </div>
@@ -295,21 +295,21 @@
             <div class="row g-4 justify-content-center">
                 <div class="col-md-4 reveal-up">
                     <div class="hb-game hb-game--gta">
-                        <i class="fa-solid fa-car-side"></i>
-                        <h4>GTA V</h4>
-                        <p>E agora, GTA VI.</p>
+                        <div class="hb-game-logo"><img src="assets/img/hobbies/jogos/gta-vi.svg" alt="Grand Theft Auto VI" loading="lazy"></div>
+                        <h4>Grand Theft Auto</h4>
+                        <p>GTA V e, agora, GTA VI.</p>
                     </div>
                 </div>
                 <div class="col-md-4 reveal-up">
                     <div class="hb-game hb-game--cod">
-                        <i class="fa-solid fa-crosshairs"></i>
+                        <div class="hb-game-logo"><img class="is-mono" src="assets/img/hobbies/jogos/warzone.png" alt="Call of Duty: Warzone" loading="lazy"></div>
                         <h4>Call of Duty</h4>
                         <p>Warzone.</p>
                     </div>
                 </div>
                 <div class="col-md-4 reveal-up">
                     <div class="hb-game hb-game--fifa">
-                        <i class="fa-solid fa-futbol"></i>
+                        <div class="hb-game-logo"><img class="is-mono" src="assets/img/hobbies/jogos/fifa.svg" alt="FIFA" loading="lazy"></div>
                         <h4>FIFA</h4>
                         <p>O cl&aacute;ssico das noites de jogo.</p>
                     </div>
@@ -317,6 +317,10 @@
             </div>
 
             <div class="hb-fotos hb-fotos--wide mt-5" data-fotos="gaming"></div>
+
+            <p class="hb-credits reveal-up">
+                Log&oacute;tipos: Wikimedia Commons (dom&iacute;nio p&uacute;blico). Marcas registadas dos respetivos propriet&aacute;rios.
+            </p>
         </div>
     </section>
 
@@ -324,31 +328,34 @@
     <section id="redes" class="hb-dark hb-dark--alt">
         <div class="container container-xl">
             <div class="section-header text-center reveal-up">
-                <span class="section-tag light">Redes</span>
+                <span class="section-tag light">Redes Sociais</span>
                 <h2 class="section-title light">Onde me encontrar</h2>
             </div>
 
+            <!-- Nível 1: redes sociais -->
             <div class="hb-social">
-                <a class="hb-social-tile reveal-up" style="--brand:#FC4C02" href="https://www.strava.com/athletes/13884564" target="_blank" rel="noopener">
-                    <i class="fa-brands fa-strava"></i><strong>Strava</strong><span>Atividades</span>
-                </a>
-                <a class="hb-social-tile reveal-up" style="--brand:#6AA127" href="https://www.komoot.com/pt-pt/user/5501306045100" target="_blank" rel="noopener">
-                    <i class="fa-solid fa-route"></i><strong>Komoot</strong><span>Percursos</span>
-                </a>
-                <a class="hb-social-tile reveal-up" style="--brand:#FF5A00" href="https://www.relive.com/pt-BR/profile/avelinoalmeida3174" target="_blank" rel="noopener">
-                    <i class="fa-solid fa-film"></i><strong>Relive</strong><span>V&iacute;deos 3D</span>
-                </a>
                 <a class="hb-social-tile hb-social-tile--ig reveal-up" href="https://www.instagram.com/avelino_almeida/" target="_blank" rel="noopener">
                     <i class="fa-brands fa-instagram"></i><strong>Instagram</strong><span>@avelino_almeida</span>
                 </a>
                 <a class="hb-social-tile reveal-up" style="--brand:#1877F2" href="https://www.facebook.com/avelino.almeida.83/" target="_blank" rel="noopener">
-                    <i class="fa-brands fa-facebook-f"></i><strong>Facebook</strong><span>Perfil</span>
+                    <i class="fa-brands fa-facebook-f"></i><strong>Facebook</strong><span>avelino.almeida.83</span>
                 </a>
                 <a class="hb-social-tile reveal-up" style="--brand:#000000" href="https://twitter.com/avlalmeida" target="_blank" rel="noopener">
                     <i class="fa-brands fa-x-twitter"></i><strong>X</strong><span>@avlalmeida</span>
                 </a>
-                <a class="hb-social-tile reveal-up" style="--brand:#e11d48" href="https://www.facebook.com/100kedas" target="_blank" rel="noopener">
-                    <span class="hb-social-emoji">💯</span><strong>Kedas</strong><span>Equipa de BTT</span>
+            </div>
+
+            <!-- Nível 2: apps de desporto -->
+            <span class="hb-social-label reveal-up">Apps de BTT</span>
+            <div class="hb-social-mini">
+                <a class="hb-social-pill reveal-up" style="--brand:#FC4C02" href="https://www.strava.com/athletes/13884564" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-strava"></i><span><strong>Strava</strong><small>Atividades</small></span>
+                </a>
+                <a class="hb-social-pill reveal-up" style="--brand:#6AA127" href="https://www.komoot.com/pt-pt/user/5501306045100" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-route"></i><span><strong>Komoot</strong><small>Percursos</small></span>
+                </a>
+                <a class="hb-social-pill reveal-up" style="--brand:#FF5A00" href="https://www.relive.com/pt-BR/profile/avelinoalmeida3174" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-film"></i><span><strong>Relive</strong><small>V&iacute;deos 3D</small></span>
                 </a>
             </div>
 
