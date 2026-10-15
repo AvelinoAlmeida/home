@@ -25,9 +25,10 @@ Site content must match the owner's 2026 CV: don't add technologies, numbers or 
 
 ### Hobbies page (`hobbies.html`)
 
-Separate page (BTT, the 💯 Kedas team, the KTM bike), linked only from the footer of `index.html` so the main page stays professional. It loads `main.css` + `assets/css/hobbies.css` and runs `hobbies-data.js` → `hobbies.js` → `main.js` (all `defer`, order matters: `hobbies.js` must create the tour cards before `main.js` attaches the `reveal-*` observer).
+Separate page with six blocks: `#btt` (km counter, 💯 Kedas, multi-day adventures), `#bike` (KTM + CO₂ bars), `#confraria`, `#futebol`, `#gaming` (Band of Covid, Xbox) and `#redes` (social tiles). Personal social networks live only here; `index.html` keeps LinkedIn, GitHub and Microsoft Learn, plus a "Hobbies" button in the navbar and a footer link. It loads `main.css` + `assets/css/hobbies.css` and runs `hobbies-data.js` → `hobbies.js` → `main.js` (all `defer`, order matters: `hobbies.js` must create elements before `main.js` attaches the `reveal-*` observer).
 
-- Content is meant to be updated over time by editing **only** `assets/js/hobbies-data.js` (`aventuras`, `voltas`, `galeria`). Totals (km, D+, count) are computed from it; the gallery section and its menu link hide themselves while `galeria` is empty.
+- Content is meant to be updated over time by editing **only** `assets/js/hobbies-data.js`: `btt.km`/`btt.dplus`/`btt.fonte`/`btt.atualizado` (entered by hand from a single source, to avoid double counting the same ride across Strava/Relive/Komoot), `aventuras`, and `fotos.<bloco>`. A `[data-fotos="<bloco>"]` container keeps its placeholder visual while its list is empty and becomes a clickable photo grid (shared `<dialog>` lightbox) once photos are added.
+- Don't use the FPF crest (trademark); the football block names the course in text (Curso de Treinador de Futebol UEFA C, Grau I).
 - `fotos/` is a git-ignored inbox for original photos. Publish an optimised copy (max 1600 px, JPEG q80, EXIF orientation applied) to `assets/img/hobbies/AAAA-MM-DD-nome.jpg`. No Python/Node on this machine; resize with PowerShell `System.Drawing`.
 - Tour data comes from the owner's Komoot profile (https://www.komoot.com/pt-pt/user/5501306045100); don't invent stats.
 

@@ -1,13 +1,17 @@
 /* ─── Página Hobbies — gerada a partir de hobbies-data.js ────── */
-/* Corre antes do main.js (ambos com defer), para que os cartões criados
+/* Corre antes do main.js (ambos com defer), para que os elementos criados
    aqui já existam quando o main.js liga as animações reveal-*. */
 
 (() => {
-    const data = window.HOBBIES || { aventuras: [], voltas: [], galeria: [] };
+    const data = window.HOBBIES || {};
+    const btt = data.btt || { km: 0, dplus: 0 };
+    const aventuras = data.aventuras || [];
+    const fotos = data.fotos || {};
 
     const fmtKm   = n => n.toLocaleString('pt-PT', { maximumFractionDigits: 1 });
     const fmtInt  = n => Math.round(n).toLocaleString('pt-PT');
     const fmtData = iso => new Date(iso + 'T12:00:00').toLocaleDateString('pt-PT', { day: 'numeric', month: 'short', year: 'numeric' });
+    const fmtMes  = ym => new Date(ym + '-15T12:00:00').toLocaleDateString('pt-PT', { month: 'long', year: 'numeric' });
     const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
     const komootLink = url => url
@@ -15,27 +19,24 @@
         : '';
 
 
-    /* ─── Totais ─────────────────────────────────────────────── */
-
-    const etapas = data.aventuras.flatMap(a => a.etapas);
-    const todas  = [...etapas, ...data.voltas];
-    const totais = {
-        km: todas.reduce((s, v) => s + v.km, 0),
-        dplus: todas.reduce((s, v) => s + v.dplus, 0),
-        voltas: todas.length
-    };
+    /* ─── BTT: totais ────────────────────────────────────────── */
 
     document.querySelectorAll('[data-total]').forEach(el => {
-        el.dataset.count = totais[el.dataset.total];
+        el.dataset.count = btt[el.dataset.total] || 0;
         el.textContent = '0';
     });
+
+    const fonteEl = document.getElementById('hb-fonte');
+    if (fonteEl && btt.fonte) {
+        fonteEl.textContent = `Fonte: ${btt.fonte}${btt.atualizado ? ' · atualizado em ' + fmtMes(btt.atualizado) : ''}`;
+    }
 
 
     /* ─── Aventuras (vários dias) ────────────────────────────── */
 
     const avEl = document.getElementById('hb-aventuras');
     if (avEl) {
-        avEl.innerHTML = data.aventuras.map(a => {
+        avEl.innerHTML = aventuras.map(a => {
             const km = a.etapas.reduce((s, e) => s + e.km, 0);
             const dp = a.etapas.reduce((s, e) => s + e.dplus, 0);
             return `
@@ -66,65 +67,33 @@
     }
 
 
-    /* ─── Voltas ─────────────────────────────────────────────── */
+    /* ─── Fotos por bloco (data-fotos="confraria" etc.) ──────── */
+    /* Com fotos: grelha clicável. Sem fotos: mantém o visual de reserva. */
 
-    const vEl = document.getElementById('hb-voltas');
-    if (vEl) {
-        const voltas = [...data.voltas].sort((a, b) => b.data.localeCompare(a.data));
-        vEl.innerHTML = voltas.map(v => `
-            <div class="col-md-6 col-lg-4">
-                <article class="hb-ride reveal-up">
-                    <div class="hb-ride-img${v.foto ? '' : ' is-empty'}">
-                        ${v.foto
-                            ? `<img src="${esc(v.foto)}" alt="${esc(v.fotoAlt || v.titulo)}" loading="lazy">`
-                            : '<i class="fa-solid fa-person-biking"></i>'}
-                        <span class="hb-ride-date">${fmtData(v.data)}</span>
-                    </div>
-                    <div class="hb-ride-body">
-                        <h4>${esc(v.titulo)}</h4>
-                        ${v.local ? `<span class="hb-ride-local"><i class="fa-solid fa-location-dot"></i> ${esc(v.local)}</span>` : ''}
-                        <div class="hb-ride-stats">
-                            <span><i class="fa-solid fa-route"></i> ${fmtKm(v.km)} km</span>
-                            <span><i class="fa-solid fa-mountain"></i> ${fmtInt(v.dplus)} m D+</span>
-                        </div>
-                        ${komootLink(v.komoot)}
-                    </div>
-                </article>
-            </div>`).join('');
-    }
+    const dlg = document.getElementById('hb-lightbox');
 
+    document.querySelectorAll('[data-fotos]').forEach(el => {
+        const lista = fotos[el.dataset.fotos] || [];
+        if (!lista.length) return;
 
-    /* ─── Galeria (escondida enquanto estiver vazia) ─────────── */
+        el.classList.add('has-fotos');
+        el.innerHTML = lista.map((g, i) => `
+            <button type="button" class="hb-thumb" data-i="${i}" aria-label="Ampliar: ${esc(g.legenda || 'foto')}">
+                <img src="${esc(g.foto)}" alt="${esc(g.legenda || '')}" loading="lazy">
+            </button>`).join('');
 
-    const gSec = document.getElementById('galeria');
-    const gEl  = document.getElementById('hb-galeria');
-    if (gSec && gEl) {
-        if (!data.galeria.length) {
-            gSec.hidden = true;
-            document.querySelectorAll('a[href="#galeria"]').forEach(a => a.closest('li')?.remove());
-        } else {
-            gEl.innerHTML = data.galeria.map((g, i) => `
-                <div class="col-6 col-md-4">
-                    <button type="button" class="hb-thumb reveal-up" data-i="${i}" aria-label="Ampliar: ${esc(g.legenda || 'foto')}">
-                        <img src="${esc(g.foto)}" alt="${esc(g.legenda || '')}" loading="lazy">
-                    </button>
-                </div>`).join('');
+        el.addEventListener('click', e => {
+            const btn = e.target.closest('.hb-thumb');
+            if (!btn || !dlg) return;
+            const g = lista[btn.dataset.i];
+            dlg.querySelector('img').src = g.foto;
+            dlg.querySelector('img').alt = g.legenda || '';
+            dlg.querySelector('figcaption').textContent = g.legenda || '';
+            dlg.showModal();
+        });
+    });
 
-            const dlg = document.getElementById('hb-lightbox');
-            const img = dlg.querySelector('img');
-            const cap = dlg.querySelector('figcaption');
-            gEl.addEventListener('click', e => {
-                const btn = e.target.closest('.hb-thumb');
-                if (!btn) return;
-                const g = data.galeria[btn.dataset.i];
-                img.src = g.foto;
-                img.alt = g.legenda || '';
-                cap.textContent = g.legenda || '';
-                dlg.showModal();
-            });
-            dlg.addEventListener('click', () => dlg.close());
-        }
-    }
+    dlg?.addEventListener('click', () => dlg.close());
 
 
     /* ─── Contadores animados ────────────────────────────────── */

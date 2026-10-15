@@ -2,17 +2,24 @@
     Dados da página Hobbies (hobbies.html)
 
     Para atualizar a página basta editar este ficheiro:
-      - Nova volta: acrescentar um objeto em `voltas` (a ordem não importa,
-        a página ordena por data, da mais recente para a mais antiga).
+      - BTT: atualizar `btt.km`, `btt.dplus`, `btt.fonte` e `btt.atualizado`
+        (usar uma única fonte para não contar a mesma volta duas vezes).
       - Nova aventura de vários dias: acrescentar em `aventuras`, com as etapas.
-      - Nova foto na galeria: acrescentar em `galeria`.
-    Os totais (km, D+, nº de voltas) são calculados automaticamente.
+      - Fotos de um bloco: acrescentar em `fotos.<bloco>` (confraria, futebol, gaming).
+        Enquanto a lista estiver vazia, o bloco mostra um visual sem fotos.
 
-    Fotos: guardar a versão otimizada em assets/img/hobbies/ (máx. 1600 px).
-    Campos opcionais: `foto`, `komoot`, `local`.
+    Fotos: guardar a versão otimizada em assets/img/hobbies/ (máx. 1600 px),
+    com o nome AAAA-MM-DD-descricao.jpg. Os originais ficam em fotos/ (fora do git).
 */
 
 window.HOBBIES = {
+
+    btt: {
+        km: 526,
+        dplus: 8360,
+        fonte: 'Komoot',
+        atualizado: '2026-09'
+    },
 
     aventuras: [
         {
@@ -27,17 +34,11 @@ window.HOBBIES = {
         }
     ],
 
-    voltas: [
-        { titulo: 'De Paço de Sousa a Cabeça Santa', data: '2026-09-13', km: 55.7, dplus: 820, local: 'Penafiel', komoot: 'https://www.komoot.com/pt-pt/tour/3279626330' },
-        { titulo: 'Brenha', data: '2026-09-09', km: 38.4, dplus: 730, komoot: 'https://www.komoot.com/pt-pt/tour/3270781108' },
-        { titulo: '💯 Kedas Castelo de Paiva', data: '2026-08-15', km: 52.7, dplus: 950, local: 'Castelo de Paiva', komoot: 'https://www.komoot.com/pt-pt/tour/3202538760' },
-        { titulo: 'Livração – Sra. da Graça – Livração', data: '2026-08-08', km: 115, dplus: 1730, komoot: 'https://www.komoot.com/pt-pt/tour/3181897154',
-          foto: 'assets/img/hobbies/2026-08-08-miradouro-canico.jpg', fotoAlt: 'Miradouro do Caniço, Veade, Celorico de Basto' },
-        { titulo: 'Cara na Pedra', data: '2026-08-06', km: 24.4, dplus: 430, komoot: 'https://www.komoot.com/pt-pt/tour/3176532567',
-          foto: 'assets/img/hobbies/2026-08-06-ktm-cara-na-pedra.jpg', fotoAlt: 'KTM Macina Chacana junto a um penedo' }
-    ],
-
-    galeria: [
-        // { foto: 'assets/img/hobbies/AAAA-MM-DD-nome.jpg', legenda: 'Texto da legenda' }
-    ]
+    fotos: {
+        confraria: [
+            // { foto: 'assets/img/hobbies/AAAA-MM-DD-confraria.jpg', legenda: 'Texto da legenda' }
+        ],
+        futebol: [],
+        gaming: []
+    }
 };

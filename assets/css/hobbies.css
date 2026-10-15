@@ -2,14 +2,14 @@
     Avelino Almeida - Página Hobbies (hobbies.html)
     Carregado depois do main.css; reutiliza as variáveis e componentes base.
     01. Secções
-    02. Abertura
+    02. BTT (abertura)
     03. Equipa
     04. Aventuras
-    05. Voltas
-    06. Bicicleta (KTM e sustentabilidade)
-    07. Galeria
-    08. Seguir
-    09. Responsive
+    06. Bike (KTM e sustentabilidade)
+    07. Galeria / lightbox
+    08. Blocos: Confraria, Futebol, Gaming
+    09. Redes sociais
+    10. Responsive
 */
 
 /* 01. Secções */
@@ -65,7 +65,7 @@
 
 /* 02. Abertura */
 
-#hb-hero {
+#btt {
     position: relative;
     padding: 15rem 0 10rem;
     background:
@@ -144,6 +144,31 @@
     margin-top: 0.6rem;
     font-size: 1.3rem;
     color: var(--text-inverse-soft);
+}
+
+.hb-stat-num small {
+    font-size: 0.5em;
+    color: #fdba74;
+}
+
+.hb-stat--main {
+    flex-grow: 1.4;
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.18), rgba(249, 115, 22, 0.04));
+    border-color: rgba(249, 115, 22, 0.3);
+}
+
+.hb-stat--main .hb-stat-num {
+    font-size: 5.2rem;
+}
+
+.hb-fonte {
+    margin: 1.4rem 0 0;
+    font-size: 1.2rem;
+    color: var(--text-inverse-soft);
+}
+
+#btt > .container > .hb-team {
+    margin-top: 7rem;
 }
 
 .hb-hero-photo {
@@ -372,140 +397,9 @@
     color: #fff;
 }
 
-/* 05. Voltas */
-
-.hb-ride {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    border-radius: 26px;
-    background: #fff;
-    border: 1px solid var(--light-2);
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
-}
-
-.hb-ride:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow);
-}
-
-.hb-ride-img {
-    position: relative;
-    aspect-ratio: 16 / 10;
-    overflow: hidden;
-}
-
-.hb-ride-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-}
-
-.hb-ride:hover .hb-ride-img img {
-    transform: scale(1.05);
-}
-
-.hb-ride-img.is-empty {
-    display: grid;
-    place-items: center;
-    background:
-        radial-gradient(circle at 70% 30%, rgba(249, 115, 22, 0.35), transparent 45%),
-        linear-gradient(135deg, #111827 0%, #1f2937 100%);
-}
-
-.hb-ride-img.is-empty i {
-    font-size: 5rem;
-    color: rgba(255, 255, 255, 0.18);
-}
-
-.hb-ride-date {
-    position: absolute;
-    top: 1.4rem;
-    left: 1.4rem;
-    padding: 0.5rem 1.1rem;
-    border-radius: 999px;
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #fff;
-    background: rgba(5, 12, 24, 0.65);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-}
-
-.hb-ride-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 2.2rem;
-}
-
-.hb-ride-body h4 {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 1.9rem;
-    color: var(--text-title);
-    margin: 0;
-}
-
-.hb-ride-local {
-    font-size: 1.3rem;
-    color: var(--text-soft);
-}
-
-.hb-ride-stats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-}
-
-.hb-ride-stats span {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 999px;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--accent-strong);
-    background: rgba(249, 115, 22, 0.08);
-}
-
-.hb-ride .hb-komoot {
-    margin-top: auto;
-    color: var(--accent-strong);
-}
-
-.hb-ride .hb-komoot:hover {
-    color: var(--accent);
-}
-
-.hb-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
-    padding: 1.3rem 2.4rem;
-    border-radius: 999px;
-    font-size: 1.45rem;
-    font-weight: 700;
-    color: #fff;
-    background: var(--accent);
-    text-decoration: none;
-    box-shadow: 0 14px 30px rgba(249, 115, 22, 0.25);
-    transition: var(--transition);
-}
-
-.hb-btn:hover {
-    color: #fff;
-    background: var(--accent-strong);
-    transform: translateY(-2px);
-}
-
 /* 06. Bicicleta (KTM e sustentabilidade, recuperado da antiga secção Lazer) */
 
-#bicicleta > .container > .row > [class*="col"] > p {
+#bike > .container > .row > [class*="col"] > p {
     color: var(--text-body);
 }
 
@@ -819,35 +713,395 @@
     color: #fff;
 }
 
-/* 08. Seguir */
+/* 08. Blocos: Confraria, Futebol, Gaming */
 
-.hb-follow {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.2rem;
-    margin: 2rem 0 4rem;
+.hb-text-inverse {
+    font-size: 1.7rem;
+    line-height: 1.7;
+    color: var(--text-inverse);
 }
 
-.hb-follow a {
+.hb-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin: 2.4rem 0 2.8rem;
+}
+
+.hb-chips span {
     display: inline-flex;
     align-items: center;
-    gap: 0.8rem;
-    padding: 1.3rem 2.2rem;
+    gap: 0.6rem;
+    padding: 0.8rem 1.4rem;
     border-radius: 999px;
-    font-size: 1.45rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: #fff;
-    text-decoration: none;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.hb-chips--light span {
+    color: var(--hb-theme, var(--accent-strong));
+    background: color-mix(in srgb, var(--hb-theme, var(--accent)) 8%, transparent);
+    border-color: color-mix(in srgb, var(--hb-theme, var(--accent)) 20%, transparent);
+}
+
+.hb-link--light {
+    color: #fdba74;
+}
+
+.hb-link--light:hover {
+    color: #fff;
+}
+
+/* Fotos de bloco: placeholder enquanto não há fotos, grelha quando há */
+
+.hb-fotos.has-fotos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+}
+
+.hb-fotos.has-fotos .hb-thumb:first-child {
+    grid-column: 1 / -1;
+}
+
+.hb-fotos.has-fotos .hb-thumb:first-child img {
+    aspect-ratio: 16 / 10;
+}
+
+.hb-fotos--wide.has-fotos {
+    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+}
+
+.hb-fotos--wide.has-fotos .hb-thumb:first-child {
+    grid-column: auto;
+}
+
+.hb-fotos--wide.has-fotos .hb-thumb:first-child img {
+    aspect-ratio: 1;
+}
+
+.hb-placeholder {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+    overflow: hidden;
+    border-radius: 32px;
+    background:
+        radial-gradient(circle at 30% 25%, color-mix(in srgb, var(--hb-theme) 55%, transparent), transparent 55%),
+        radial-gradient(circle at 80% 85%, color-mix(in srgb, var(--hb-theme) 35%, transparent), transparent 50%),
+        #0b1020;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-lg);
+}
+
+.hb-placeholder i {
+    font-size: 9rem;
+    color: rgba(255, 255, 255, 0.85);
+    filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.4));
+}
+
+.hb-placeholder span {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.hb-placeholder--pitch {
+    background:
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0 60px, transparent 60px 120px),
+        radial-gradient(circle at 50% 50%, transparent 0 7rem, rgba(255, 255, 255, 0.35) 7rem calc(7rem + 2px), transparent calc(7rem + 2px)),
+        linear-gradient(90deg, transparent calc(50% - 1px), rgba(255, 255, 255, 0.35) calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px)),
+        linear-gradient(160deg, #15803d 0%, #166534 100%);
+}
+
+/* Temas de cor por bloco */
+
+.hb-theme-wine  { --hb-theme: #be123c; }
+.hb-theme-pitch { --hb-theme: #16a34a; }
+.hb-theme-xbox  { --hb-theme: #107c10; }
+
+.hb-theme-wine {
+    background:
+        radial-gradient(circle at 85% 20%, rgba(190, 18, 60, 0.22), transparent 30%),
+        linear-gradient(180deg, #120a10 0%, #1a0d14 100%);
+}
+
+.hb-theme-wine .section-tag.light {
+    color: #fda4af;
+    border-color: rgba(253, 164, 175, 0.24);
+}
+
+.hb-theme-pitch {
+    background:
+        radial-gradient(circle at 10% 20%, rgba(22, 163, 74, 0.12), transparent 25%),
+        linear-gradient(180deg, #f8fafc 0%, #eef6f0 100%);
+}
+
+.hb-theme-pitch .section-tag {
+    color: #15803d;
+    background: rgba(22, 163, 74, 0.08);
+    border-color: rgba(22, 163, 74, 0.18);
+}
+
+.hb-theme-pitch p {
+    color: var(--text-body);
+}
+
+.hb-theme-xbox {
+    background:
+        radial-gradient(circle at 50% 0%, rgba(16, 124, 16, 0.3), transparent 40%),
+        linear-gradient(180deg, #050a05 0%, #0a120c 100%);
+}
+
+.hb-theme-xbox .section-tag.light {
+    color: #86efac;
+    border-color: rgba(134, 239, 172, 0.24);
+}
+
+.hb-theme-xbox .section-header p {
+    color: var(--text-inverse);
+}
+
+/* Futebol: objetivo */
+
+.hb-goal {
+    padding: 2.6rem;
+    border-radius: 28px;
+    background: #fff;
+    border: 1px solid rgba(22, 163, 74, 0.18);
+    box-shadow: var(--shadow-sm);
+}
+
+.hb-goal-head {
+    display: flex;
+    gap: 1.6rem;
+    align-items: center;
+    margin-bottom: 1.4rem;
+}
+
+.hb-goal-head > i {
+    flex-shrink: 0;
+    width: 5.6rem;
+    height: 5.6rem;
+    display: grid;
+    place-items: center;
+    border-radius: 16px;
+    font-size: 2.4rem;
+    color: #fff;
+    background: linear-gradient(135deg, #16a34a, #15803d);
+}
+
+.hb-goal .hb-eyebrow {
+    margin-bottom: 0.4rem;
+    color: #15803d;
+}
+
+.hb-goal h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 2rem;
+    color: var(--text-title);
+    margin: 0;
+}
+
+.hb-goal p {
+    font-size: 1.45rem;
+}
+
+.hb-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.hb-steps li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1.2rem;
+    border-radius: 16px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-title);
+    background: rgba(22, 163, 74, 0.06);
+}
+
+.hb-steps li span {
+    width: 2.8rem;
+    height: 2.8rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    color: #fff;
+    background: #16a34a;
+}
+
+/* Gaming: jogos */
+
+.hb-game {
+    position: relative;
+    height: 100%;
+    padding: 3.2rem 2.8rem;
+    overflow: hidden;
+    border-radius: 28px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     transition: var(--transition);
 }
 
-.hb-follow a:hover {
-    background: var(--accent);
-    border-color: var(--accent);
-    transform: translateY(-2px);
+.hb-game::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, var(--game), transparent 65%);
+    opacity: 0.35;
+    transition: var(--transition);
+}
+
+.hb-game:hover {
+    transform: translateY(-6px);
+    border-color: var(--game);
+}
+
+.hb-game:hover::before {
+    opacity: 0.6;
+}
+
+.hb-game > * {
+    position: relative;
+}
+
+.hb-game i {
+    font-size: 5rem;
+    color: #fff;
+    margin-bottom: 1.6rem;
+}
+
+.hb-game h4 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 2.4rem;
+    color: #fff;
+    margin-bottom: 0.6rem;
+}
+
+.hb-game p {
+    margin: 0;
+    font-size: 1.45rem;
+    color: var(--text-inverse);
+}
+
+.hb-game--gta  { --game: #f59e0b; }
+.hb-game--cod  { --game: #16a34a; }
+.hb-game--fifa { --game: #2563eb; }
+
+/* 09. Redes sociais */
+
+.hb-social {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1.6rem;
+}
+
+.hb-social-tile {
+    --brand: var(--accent);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    aspect-ratio: 1;
+    padding: 2rem 1.4rem;
+    overflow: hidden;
+    border-radius: 28px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.hb-social-tile::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--brand);
+    opacity: 0;
+    transition: opacity var(--transition);
+}
+
+.hb-social-tile--ig::before {
+    background: linear-gradient(45deg, #feda75, #fa7e1e 25%, #d62976 50%, #962fbf 75%, #4f5bd5);
+}
+
+.hb-social-tile > * {
+    position: relative;
+}
+
+.hb-social-tile i,
+.hb-social-emoji {
+    width: 7.2rem;
+    height: 7.2rem;
+    display: grid;
+    place-items: center;
+    margin-bottom: 0.8rem;
+    border-radius: 22px;
+    font-size: 3.4rem;
+    color: #fff;
+    background: var(--brand);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+    transition: transform var(--transition), background var(--transition);
+}
+
+.hb-social-tile--ig i {
+    background: linear-gradient(45deg, #feda75, #fa7e1e 25%, #d62976 50%, #962fbf 75%, #4f5bd5);
+}
+
+.hb-social-tile strong {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.8rem;
+}
+
+.hb-social-tile > span:last-child {
+    font-size: 1.2rem;
+    color: var(--text-inverse-soft);
+    transition: color var(--transition);
+}
+
+.hb-social-tile:hover {
+    color: #fff;
+    transform: translateY(-8px);
+    border-color: transparent;
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.45);
+}
+
+.hb-social-tile:hover::before {
+    opacity: 1;
+}
+
+.hb-social-tile:hover i,
+.hb-social-tile:hover .hb-social-emoji {
+    transform: scale(1.08) rotate(-4deg);
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.hb-social-tile:hover > span:last-child {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .hb-back-link {
@@ -861,12 +1115,10 @@
     color: #fff;
 }
 
-
-
-/* 09. Responsive */
+/* 10. Responsive */
 
 @media (max-width: 991px) {
-    #hb-hero {
+    #btt {
         padding-top: 13rem;
     }
 
