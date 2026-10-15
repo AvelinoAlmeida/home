@@ -41,8 +41,20 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
         const target = document.querySelector(link.getAttribute('href'));
         if (!target) return;
         e.preventDefault();
-        const offset = navbar ? navbar.offsetHeight + 8 : 0;
-        window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+
+        // Secção no topo da página (hero): voltar ao início
+        if (target.offsetTop === 0) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
+
+        // Alinhar o conteúdo (e não o início da secção) logo abaixo da navbar,
+        // descontando o padding-top da secção, que varia com o ecrã (clamp)
+        const navH = navbar ? navbar.offsetHeight : 0;
+        const padTop = parseFloat(getComputedStyle(target).paddingTop) || 0;
+        const gap = 24;
+        const top = Math.max(0, target.offsetTop + padTop - navH - gap);
+        window.scrollTo({ top, behavior: 'smooth' });
     });
 });
 

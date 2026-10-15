@@ -144,7 +144,7 @@ section {
 }
 
 .section-header {
-    margin-bottom: 5.6rem;
+    margin-bottom: clamp(3.2rem, 5vw, 4.8rem);
 }
 
 .section-header p {
@@ -551,7 +551,7 @@ section {
 
 #about {
     position: relative;
-    padding: 11rem 0;
+    padding: clamp(6rem, 9vw, 9rem) 0;
     background:
         linear-gradient(145deg, rgba(6, 13, 25, 0.9), rgba(10, 19, 37, 0.72)),
         url("../img/sameiro.jpg") center / cover no-repeat;
@@ -654,7 +654,7 @@ section {
 
 #skills {
     position: relative;
-    padding: 11rem 0;
+    padding: clamp(6rem, 9vw, 9rem) 0;
     background:
         linear-gradient(180deg, rgba(6, 11, 21, 0.97) 0%, rgba(9, 16, 32, 0.98) 100%);
 }
@@ -880,7 +880,7 @@ section {
 
 #formacao {
     position: relative;
-    padding: 11rem 0;
+    padding: clamp(6rem, 9vw, 9rem) 0;
     background:
         radial-gradient(circle at top left, rgba(37, 99, 235, 0.06), transparent 20%),
         linear-gradient(180deg, #f8fafc 0%, #eef3f9 100%);
@@ -949,7 +949,7 @@ section {
 
 #contact {
     position: relative;
-    padding: 11rem 0;
+    padding: clamp(6rem, 9vw, 9rem) 0;
     background:
         radial-gradient(circle at top right, rgba(56, 189, 248, 0.14), transparent 20%),
         linear-gradient(180deg, #081120 0%, #0b162c 100%);
@@ -1253,13 +1253,6 @@ textarea.form-ctrl {
     .exp-current,
     .formacao-card {
         padding: 2.2rem;
-    }
-
-    #about,
-    #skills,
-    #formacao,
-    #contact {
-        padding: 8.5rem 0;
     }
 }
 
