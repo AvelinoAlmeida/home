@@ -1,90 +1,90 @@
-# Avelino Almeida · Site pessoal
+# Avelino Almeida · Personal website
 
-Site pessoal de Avelino Almeida, Consultor DBA na eSPap (SQL Server on-premises e Azure, BI e ETL).
-Reúne o perfil profissional, o CV para descarregar, um formulário de contacto e uma página de hobbies.
+Personal website of Avelino Almeida, DBA Consultant at eSPap (SQL Server on-premises and Azure, BI and ETL).
+It brings together the professional profile, a downloadable CV, a contact form and a hobbies page.
 
-O site está disponível em **inglês** (raiz, a versão que abre por defeito) e em **português** (`/pt/`). O botão com a bandeira, no canto
-superior direito, troca entre as duas versões da mesma página.
+The site is available in **English** (site root, the version that opens by default) and in **Portuguese** (`/pt/`).
+The flag button in the top-right corner switches between the two versions of the same page.
 
-## Páginas
+## Pages
 
-| Página | PT | EN |
+| Page | EN | PT |
 | --- | --- | --- |
-| Perfil profissional: resumo, percurso, competências, formação e contacto | [pt/index.html](pt/index.html) | [index.html](index.html) |
-| Hobbies: BTT, a KTM, a Confraria, futebol de formação, gaming e redes sociais | [pt/hobbies.html](pt/hobbies.html) | [hobbies.html](hobbies.html) |
+| Professional profile: summary, career, skills, education and contact | [index.html](index.html) | [pt/index.html](pt/index.html) |
+| Hobbies: mountain biking, the KTM, the Confraria, youth football, gaming and social media | [hobbies.html](hobbies.html) | [pt/hobbies.html](pt/hobbies.html) |
 
-## Estrutura
+## Structure
 
 ```
-index.html, hobbies.html     versão inglesa (abre por defeito)
-pt/                          versão portuguesa (mesmas secções e mesmos ids)
+index.html, hobbies.html     English version (opens by default)
+pt/                          Portuguese version (same sections and ids)
 assets/
-  css/main.css               estilos comuns (inclui o seletor de idioma)
-  css/hobbies.css            estilos da página de hobbies
-  js/main.js                 navbar, scroll suave, animações e formulário
-  js/hobbies-data.js         dados da página de hobbies (totais, aventuras, fotos)
-  js/hobbies.js              gera os blocos de hobbies a partir dos dados, em PT ou EN
-  cv/                        CV em PDF (PT e EN)
-  img/                       imagens, fotos e bandeiras (img/flags)
+  css/main.css               shared styles (including the language switcher)
+  css/hobbies.css            hobbies page styles
+  js/main.js                 navbar, smooth scrolling, animations and contact form
+  js/hobbies-data.js         hobbies page data (totals, adventures, photos)
+  js/hobbies.js              builds the hobbies blocks from the data, in EN or PT
+  cv/                        CV as PDF (EN and PT)
+  img/                       images, photos and flags (img/flags)
 ```
 
-É um site estático: HTML, CSS e JavaScript, sem passo de build. As bibliotecas vêm de CDN.
+It is a static site: HTML, CSS and JavaScript, with no build step. Libraries are loaded from CDNs.
 
-## Executar localmente
+## Running locally
 
-Basta servir a pasta do projeto com qualquer servidor estático e abrir `http://localhost:8000/`.
-Por exemplo:
+Serve the project folder with any static web server and open `http://localhost:8000/`.
+For example:
 
 ```sh
 python -m http.server 8000      # Python 3
 npx serve -l 8000               # Node.js
 ```
 
-No VS Code também funciona a extensão Live Server.
+The Live Server extension for VS Code also works.
 
-## Manutenção
+## Maintenance
 
-### Textos nos dois idiomas
+### Text in both languages
 
-Cada página existe em duas cópias (`index.html` e `pt/index.html`, `hobbies.html` e `pt/hobbies.html`).
-Ao alterar um texto numa versão, atualizar também a outra. Nas páginas dentro de `pt/`, os caminhos
-para os recursos começam por `../assets/`.
+Each page exists in two copies (`index.html` and `pt/index.html`, `hobbies.html` and `pt/hobbies.html`).
+When you change text in one version, update the other as well. In the pages inside `pt/`, paths to
+assets start with `../assets/`.
 
 ### Hobbies
 
-Os números do BTT, as aventuras e as fotos estão em [assets/js/hobbies-data.js](assets/js/hobbies-data.js);
-as instruções estão no topo desse ficheiro. Os textos em inglês usam um campo com o sufixo `_en`
-(por exemplo `subtitulo_en` ou `legenda_en`); sem ele, a versão inglesa mostra o texto em português.
+The mountain biking totals, the adventures and the photos live in [assets/js/hobbies-data.js](assets/js/hobbies-data.js);
+instructions are at the top of that file. English text uses a field with the `_en` suffix
+(for example `subtitulo_en` or `legenda_en`); without it, the English version shows the Portuguese text.
 
 ### CV
 
-Substituir os PDFs em `assets/cv/` mantendo os nomes `Avelino_Almeida_CV_2026_PT.pdf` e
-`Avelino_Almeida_CV_2026_EN.pdf`, ou atualizar as ligações nas duas páginas `index.html`.
+Replace the PDFs in `assets/cv/`, keeping the names `Avelino_Almeida_CV_2026_EN.pdf` and
+`Avelino_Almeida_CV_2026_PT.pdf`, or update the links in both `index.html` pages.
 
-### Formulário de contacto
+### Contact form
 
-O formulário envia as mensagens através do [Web3Forms](https://web3forms.com) (gratuito, sem backend).
-A chave de acesso está no campo `access_key` do formulário, nas duas versões do `index.html`.
-As mensagens enviadas a partir da versão inglesa chegam com o assunto terminado em `(EN)`.
+The form sends messages through [Web3Forms](https://web3forms.com) (free, no backend required).
+The access key is in the form's `access_key` field, in both versions of `index.html`.
+Messages sent from the English version arrive with a subject ending in `(EN)`.
 
-## Tecnologias e créditos
+## Technologies and credits
 
 - [Bootstrap 5](https://getbootstrap.com/)
 - [Font Awesome 6](https://fontawesome.com/)
-- [Devicon](https://devicon.dev/), ícones de tecnologias
-- Google Fonts: [Inter](https://fonts.google.com/specimen/Inter) e [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk)
-- [Web3Forms](https://web3forms.com), envio do formulário de contacto
-- Logótipos dos jogos: Wikimedia Commons (domínio público); marcas registadas dos respetivos proprietários
+- [Devicon](https://devicon.dev/), technology icons
+- Google Fonts: [Inter](https://fonts.google.com/specimen/Inter) and [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk)
+- [Web3Forms](https://web3forms.com), contact form delivery
+- Game logos: Wikimedia Commons (public domain); trademarks belong to their respective owners
 
-A primeira versão do site (2022) usava também:
+The first version of the site (2022) also used:
 
 - [jQuery](https://jquery.com/)
 - [ScrollReveal](https://scrollrevealjs.org/)
 - [Featherlight](https://noelboss.github.io/featherlight/)
 - [SmoothScroll for Websites](https://github.com/galambalazs/smoothscroll-for-websites)
-- Google Fonts: [Arapey](https://fonts.google.com/specimen/Arapey) e [Abril Fatface](https://fonts.google.com/specimen/Abril+Fatface)
-- Imagens de demonstração do [Pixabay](https://pixabay.com/)
+- Google Fonts: [Arapey](https://fonts.google.com/specimen/Arapey) and [Abril Fatface](https://fonts.google.com/specimen/Abril+Fatface)
+- Demo images from [Pixabay](https://pixabay.com/)
 
-## Licença
+## License
 
 [MIT](LICENSE) © Avelino Almeida
