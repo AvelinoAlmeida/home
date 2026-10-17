@@ -321,6 +321,45 @@ section {
     border-color: var(--accent);
 }
 
+/* Seletor de idioma: mostra a bandeira e o código do idioma de destino */
+.lang-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin: 0 1rem 0 auto;
+    padding: 0.7rem 1.1rem;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 999px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.lang-switch:hover,
+.lang-switch:focus {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.lang-switch img {
+    width: 2.2rem;
+    height: 1.5rem;
+    border-radius: 3px;
+    object-fit: cover;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+@media (min-width: 992px) {
+    .lang-switch {
+        order: 3;
+        margin: 0 0 0 1.2rem;
+    }
+}
+
 @media (max-width: 991px) {
     #navbar .navbar-collapse.show,
     #navbar .navbar-collapse.collapsing {

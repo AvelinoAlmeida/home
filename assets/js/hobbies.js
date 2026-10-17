@@ -8,14 +8,34 @@
     const aventuras = data.aventuras || [];
     const fotos = data.fotos || {};
 
-    const fmtKm   = n => n.toLocaleString('pt-PT', { maximumFractionDigits: 1 });
-    const fmtInt  = n => Math.round(n).toLocaleString('pt-PT');
-    const fmtData = iso => new Date(iso + 'T12:00:00').toLocaleDateString('pt-PT', { day: 'numeric', month: 'short', year: 'numeric' });
-    const fmtMes  = ym => new Date(ym + '-15T12:00:00').toLocaleDateString('pt-PT', { month: 'long', year: 'numeric' });
+    /* ─── Idioma (lang do <html>) e textos gerados aqui ─────────── */
+
+    const isEn = document.documentElement.lang.startsWith('en');
+    const locale = isEn ? 'en-GB' : 'pt-PT';
+    const T = isEn ? {
+        komoot: 'View on Komoot', fonte: 'Source', atualizado: 'updated', destaque: 'Featured adventure',
+        distancia: 'distance', dplus: 'elevation gain', dia: 'day', dias: 'days', ampliar: 'Enlarge', foto: 'photo'
+    } : {
+        komoot: 'Ver no Komoot', fonte: 'Fonte', atualizado: 'atualizado em', destaque: 'Aventura em destaque',
+        distancia: 'dist&acirc;ncia', dplus: 'desn&iacute;vel D+', dia: 'dia', dias: 'dias', ampliar: 'Ampliar', foto: 'foto'
+    };
+
+    // Campo traduzido: em inglês usa `campo_en` quando existe (ver hobbies-data.js)
+    const tx = (o, k) => (isEn && o[k + '_en']) || o[k] || '';
+
+    // Os caminhos em hobbies-data.js são relativos à raiz do site;
+    // resolvê-los a partir deste script faz com que funcionem também em /en/
+    const root = new URL('../../', document.currentScript.src);
+    const url = p => new URL(p, root).href;
+
+    const fmtKm   = n => n.toLocaleString(locale, { maximumFractionDigits: 1 });
+    const fmtInt  = n => Math.round(n).toLocaleString(locale);
+    const fmtData = iso => new Date(iso + 'T12:00:00').toLocaleDateString(locale, { day: 'numeric', month: 'short', year: 'numeric' });
+    const fmtMes  = ym => new Date(ym + '-15T12:00:00').toLocaleDateString(locale, { month: 'long', year: 'numeric' });
     const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-    const komootLink = url => url
-        ? `<a class="hb-komoot" href="${esc(url)}" target="_blank" rel="noopener">Ver no Komoot <i class="fa-solid fa-arrow-up-right-from-square"></i></a>`
+    const komootLink = href => href
+        ? `<a class="hb-komoot" href="${esc(href)}" target="_blank" rel="noopener">${T.komoot} <i class="fa-solid fa-arrow-up-right-from-square"></i></a>`
         : '';
 
 
@@ -28,7 +48,7 @@
 
     const fonteEl = document.getElementById('hb-fonte');
     if (fonteEl && btt.fonte) {
-        fonteEl.textContent = `Fonte: ${btt.fonte}${btt.atualizado ? ' · atualizado em ' + fmtMes(btt.atualizado) : ''}`;
+        fonteEl.textContent = `${T.fonte}: ${btt.fonte}${btt.atualizado ? ` · ${T.atualizado} ` + fmtMes(btt.atualizado) : ''}`;
     }
 
 
@@ -41,21 +61,21 @@
             const dp = a.etapas.reduce((s, e) => s + e.dplus, 0);
             return `
             <article class="hb-feature reveal-up">
-                ${a.foto ? `<div class="hb-feature-img"><img src="${esc(a.foto)}" alt="${esc(a.fotoAlt || a.titulo)}" loading="lazy"></div>` : ''}
+                ${a.foto ? `<div class="hb-feature-img"><img src="${esc(url(a.foto))}" alt="${esc(tx(a, 'fotoAlt') || tx(a, 'titulo'))}" loading="lazy"></div>` : ''}
                 <div class="hb-feature-body">
-                    <span class="hb-eyebrow">Aventura em destaque</span>
-                    <h3>${esc(a.titulo)}</h3>
-                    <p class="hb-feature-sub">${esc(a.subtitulo || '')}</p>
+                    <span class="hb-eyebrow">${T.destaque}</span>
+                    <h3>${esc(tx(a, 'titulo'))}</h3>
+                    <p class="hb-feature-sub">${esc(tx(a, 'subtitulo'))}</p>
                     <div class="hb-feature-stats">
-                        <div><strong>${fmtInt(km)} km</strong><span>dist&acirc;ncia</span></div>
-                        <div><strong>${fmtInt(dp)} m</strong><span>desn&iacute;vel D+</span></div>
-                        <div><strong>${a.etapas.length}</strong><span>${a.etapas.length === 1 ? 'dia' : 'dias'}</span></div>
+                        <div><strong>${fmtInt(km)} km</strong><span>${T.distancia}</span></div>
+                        <div><strong>${fmtInt(dp)} m</strong><span>${T.dplus}</span></div>
+                        <div><strong>${a.etapas.length}</strong><span>${a.etapas.length === 1 ? T.dia : T.dias}</span></div>
                     </div>
                     <ol class="hb-etapas">
                         ${a.etapas.map(e => `
                         <li>
                             <div>
-                                <strong>${esc(e.titulo)}</strong>
+                                <strong>${esc(tx(e, 'titulo'))}</strong>
                                 <span>${fmtData(e.data)} &middot; ${fmtKm(e.km)} km &middot; ${fmtInt(e.dplus)} m D+${e.duracao ? ' &middot; ' + esc(e.duracao) : ''}</span>
                             </div>
                             ${komootLink(e.komoot)}
@@ -78,17 +98,17 @@
 
         el.classList.add('has-fotos');
         el.innerHTML = lista.map((g, i) => `
-            <button type="button" class="hb-thumb" data-i="${i}" aria-label="Ampliar: ${esc(g.legenda || 'foto')}">
-                <img src="${esc(g.foto)}" alt="${esc(g.legenda || '')}" loading="lazy">
+            <button type="button" class="hb-thumb" data-i="${i}" aria-label="${T.ampliar}: ${esc(tx(g, 'legenda') || T.foto)}">
+                <img src="${esc(url(g.foto))}" alt="${esc(tx(g, 'legenda'))}" loading="lazy">
             </button>`).join('');
 
         el.addEventListener('click', e => {
             const btn = e.target.closest('.hb-thumb');
             if (!btn || !dlg) return;
             const g = lista[btn.dataset.i];
-            dlg.querySelector('img').src = g.foto;
-            dlg.querySelector('img').alt = g.legenda || '';
-            dlg.querySelector('figcaption').textContent = g.legenda || '';
+            dlg.querySelector('img').src = url(g.foto);
+            dlg.querySelector('img').alt = tx(g, 'legenda');
+            dlg.querySelector('figcaption').textContent = tx(g, 'legenda');
             dlg.showModal();
         });
     });

@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Avelino Almeida, DBA Consultant at eSPap: SQL Server on-premises and Azure, BI and ETL. Master's student in Computer Engineering and certified trainer.">
+
+    <title>Avelino Almeida · DBA Consultant</title>
+
+    <link rel="shortcut icon" href="../assets/img/favicon.png">
+
+    <!-- Language versions -->
+    <link rel="alternate" hreflang="pt-PT" href="../index.html">
+    <link rel="alternate" hreflang="en" href="index.html">
+
+    <!-- Performance: preconnect para CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" rel="stylesheet">
+
+    <!-- Devicon — ícones de tecnologias -->
+    <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" rel="stylesheet">
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════ PRELOADER -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <svg class="logo-svg" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+                <rect width="56" height="56" rx="14" fill="#2563EB"/>
+                <text x="28" y="36" text-anchor="middle" font-family="'Space Grotesk',sans-serif"
+                      font-size="21" font-weight="700" fill="#fff" letter-spacing="-1">AA</text>
+            </svg>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ NAVBAR -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+        <div class="container container-xl">
+
+            <!-- Logótipo AA -->
+            <a class="navbar-brand" href="#hero">
+                <span class="brand-mark">
+                    <svg viewBox="0 0 48 48" width="40" height="40" xmlns="http://www.w3.org/2000/svg" aria-label="AA">
+                        <rect width="48" height="48" rx="12" fill="#2563EB"/>
+                        <text x="24" y="31" text-anchor="middle" font-family="'Space Grotesk',sans-serif"
+                              font-size="18" font-weight="700" fill="#fff" letter-spacing="-1">AA</text>
+                    </svg>
+                </span>
+                <span class="brand-meta d-none d-sm-flex">
+                    <strong class="brand-name">Avelino Almeida</strong>
+                    <span class="brand-role">DBA Consultant</span>
+                </span>
+            </a>
+
+            <!-- Idioma -->
+            <a class="lang-switch" href="../index.html" hreflang="pt-PT" lang="pt-PT" aria-label="Ler em português" title="Ler em português">
+                <img src="../assets/img/flags/pt.svg" alt="" width="22" height="15"> PT
+            </a>
+
+            <!-- Toggle mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navMenu" aria-controls="navMenu"
+                    aria-expanded="false" aria-label="Open menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#formacao">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-hobbies" href="hobbies.html">Hobbies</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════ HERO -->
+    <section id="hero">
+        <div class="hero-overlay"></div>
+        <div class="container container-xl hero-shell">
+            <div class="row align-items-center g-4 g-xl-5">
+                <div class="col-xl-7">
+                    <div class="hero-copy">
+                        <span class="hero-tag reveal-up" style="--d:0ms">DBA &nbsp;|&nbsp; Penafiel &nbsp;</span>
+                        <h1 class="hero-title reveal-up" style="--d:180ms"><em>Databases for environments where failure is not an option.</em></h1>
+                        <p class="hero-sub reveal-up" style="--d:360ms">
+                            Experience operating, supporting and evolving data platforms,
+                            with an approach focused on stability, control and operational continuity.
+                        </p>
+                        <div class="hero-cta reveal-up" style="--d:520ms">
+                            <a href="#about" class="btn btn-primary btn-hero">View profile</a>
+                            <a href="#contact" class="btn btn-outline-light btn-hero">Get in touch</a>
+                            <a href="../assets/cv/Avelino_Almeida_CV_2026_EN.pdf" class="btn btn-outline-light btn-hero" download>
+                                <i class="fa-solid fa-file-arrow-down"></i> Download CV (EN)
+                            </a>
+                            <a href="../assets/cv/Avelino_Almeida_CV_2026_PT.pdf" class="btn btn-outline-light btn-hero" download>
+                                <i class="fa-solid fa-file-arrow-down"></i> CV (PT)
+                            </a>
+                        </div>
+                        <div class="row row-cols-1 row-cols-sm-3 g-3 hero-metrics reveal-up" style="--d:680ms">
+                            <div class="col">
+                                <div class="hero-metric">
+                                    <span class="hero-metric-value">SQL</span>
+                                    <span class="hero-metric-label">Administration, performance and maintenance</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="hero-metric">
+                                    <span class="hero-metric-value">Azure</span>
+                                    <span class="hero-metric-label">Azure SQL Database and Managed Instance</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="hero-metric">
+                                    <span class="hero-metric-value">BI</span>
+                                    <span class="hero-metric-label">Power BI, DAX and dimensional modelling</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-5">
+                    <aside class="hero-panel reveal-up" style="--d:420ms" aria-label="Professional summary">
+                        <span class="hero-panel-eyebrow">Profile at a glance</span>
+                        <h2 class="hero-panel-title">DBA Consultant at eSPap &middot; SQL Server, BI and ETL</h2>
+                        <div class="hero-panel-list">
+                            <div class="hero-panel-item">
+                                <span class="hero-panel-label">Specialisation</span>
+                                <strong>SQL Server on-premises and Azure, SSIS, SSAS, SSRS and Power BI</strong>
+                            </div>
+                            <div class="hero-panel-item">
+                                <span class="hero-panel-label">Approach</span>
+                                <strong>Availability, performance, maintenance and data recovery</strong>
+                            </div>
+                            <div class="hero-panel-item">
+                                <span class="hero-panel-label">Based in</span>
+                                <strong>Penafiel, Portugal</strong>
+                            </div>
+                        </div>
+                        <div class="hero-panel-foot">
+                            <span>Open to professional contact and networking.</span>
+                            <a href="https://www.linkedin.com/in/avelinoalmeida/" target="_blank" rel="noopener">
+                                LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="hero-scroll" aria-label="Scroll">
+            <i class="fa-solid fa-angle-down"></i>
+        </a>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ ABOUT — Professional profile -->
+    <section id="about">
+        <div class="container container-xl position-relative" style="z-index:1">
+
+            <div class="row align-items-center g-5">
+                <!-- Summary -->
+                <div class="col-lg-6">
+                    <span class="section-tag light reveal-left">About Me</span>
+                    <h2 class="section-title light reveal-left">Data, systems and training.</h2>
+                    <p class="text-light-muted reveal-left">
+                        DBA Consultant at eSPap, administering SQL Server environments on-premises and in Azure,
+                        with a focus on availability, performance, maintenance and data recovery.
+                        Experience in Business Intelligence, from dimensional modelling to Power BI dashboard
+                        development, and in ETL processes.
+                    </p>
+                    <p class="text-light-muted reveal-left">
+                        Master's student in Computer Engineering at the Polytechnic of Porto and certified trainer
+                        in systems, networking and databases. Before IT, 17 years in the textile industry,
+                        7 of them as head of department.
+                    </p>
+                    <div class="about-badges reveal-left">
+                        <span class="badge-pill"><i class="fa-solid fa-location-dot"></i> Penafiel</span>
+                        <span class="badge-pill"><i class="fa-solid fa-database"></i> SQL Server</span>
+                        <span class="badge-pill accent"><i class="fa-solid fa-chart-column"></i> Power BI</span>
+                    </div>
+                </div>
+
+                <!-- Career -->
+                <div class="col-lg-6">
+                    <span class="section-tag light reveal-right">Career</span>
+                    <h3 class="section-title light reveal-right" style="font-size:2.8rem">
+                        Professional Experience
+                    </h3>
+                    <div class="about-panel reveal-right">
+                        <div class="places-list">
+                        <div class="place-item">
+                            <div class="place-icon"><i class="fa-solid fa-building-columns"></i></div>
+                            <div>
+                                <h5>DBA Consultant (Systems Engineering)</h5>
+                                <p>eSPap &middot; 04/2026 &ndash; present</p>
+                            </div>
+                        </div>
+                        <div class="place-item">
+                            <div class="place-icon"><i class="fa-solid fa-hospital"></i></div>
+                            <div>
+                                <h5>Technical Assistant, Information Systems</h5>
+                                <p>ULS T&acirc;mega e Sousa &middot; 06/2019 &ndash; 03/2026. CRI-SM pilot project (BI in Mental Health).</p>
+                            </div>
+                        </div>
+                        <div class="place-item">
+                            <div class="place-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                            <div>
+                                <h5>IT Trainer (evening courses)</h5>
+                                <p>ATEC &middot; CESAE Digital &middot; 2021 &ndash; present</p>
+                            </div>
+                        </div>
+                        <div class="place-item">
+                            <div class="place-icon"><i class="fa-solid fa-industry"></i></div>
+                            <div>
+                                <h5>Head of Department</h5>
+                                <p>Grupo Ricon SA &middot; 2012 &ndash; 2019</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ SKILLS — DBA -->
+    <section id="skills">
+        <div class="skills-overlay"></div>
+        <div class="container container-xl position-relative" style="z-index:1">
+
+            <div class="section-header text-center reveal-up">
+                <span class="section-tag light">Skills</span>
+                <h2 class="section-title light">Technologies & Tools</h2>
+                <p class="text-light-muted">
+                    Specialised in administering and optimising databases in critical production environments.
+                </p>
+            </div>
+
+            <!-- Current role -->
+            <div class="exp-current reveal-up">
+                <div class="exp-logo"><i class="fa-solid fa-building-columns"></i></div>
+                <div class="exp-info">
+                    <span class="exp-current-label">Current Position</span>
+                    <h4>DBA Consultant (Systems Engineering) · eSPap</h4>
+                    <p>Administration of SQL Server instances and databases (2008 to 2025) on-premises and in Azure, and of the dedicated SSIS, SSAS and SSRS servers: preventive maintenance, performance monitoring and analysis, backup and recovery, security and access.</p>
+                </div>
+                <a href="https://www.espap.gov.pt" class="exp-link" target="_blank" rel="noopener" aria-label="Visit eSPap">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+
+            <!-- Tabs Bootstrap -->
+            <ul class="nav nav-tabs skills-tabs justify-content-center mb-4 reveal-up" id="skillsTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-bd"
+                            type="button" role="tab">Databases</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-bi"
+                            type="button" role="tab">BI &amp; ETL</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-sistemas"
+                            type="button" role="tab">Systems &amp; Networking</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-automacao"
+                            type="button" role="tab">Automation</button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="skillsTabContent">
+
+                <!-- Databases -->
+                <div class="tab-pane fade show active" id="tab-bd" role="tabpanel">
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card tech-card--featured reveal-up">
+                                <i class="devicon-microsoftsqlserver-plain colored"></i>
+                                <span>SQL Server</span>
+                                <span class="featured-badge">Core</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="devicon-microsoftsqlserver-plain colored"></i>
+                                <span>T-SQL</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="devicon-azure-plain colored"></i>
+                                <span>Azure SQL Database</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="devicon-azure-plain colored"></i>
+                                <span>Azure SQL Managed Instance</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BI & ETL -->
+                <div class="tab-pane fade" id="tab-bi" role="tabpanel">
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="devicon-microsoftsqlserver-plain colored"></i>
+                                <span>SSIS</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="devicon-microsoftsqlserver-plain colored"></i>
+                                <span>SSAS</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="devicon-microsoftsqlserver-plain colored"></i>
+                                <span>SSRS</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="fa-solid fa-chart-column" style="color:#F2C811;font-size:3.8rem"></i>
+                                <span>Power BI</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="fa-solid fa-calculator" style="color:#F2C811;font-size:3.8rem"></i>
+                                <span>DAX</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="fa-solid fa-table" style="color:#217346;font-size:3.8rem"></i>
+                                <span>Power Query</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Systems & Networking -->
+                <div class="tab-pane fade" id="tab-sistemas" role="tabpanel">
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="devicon-windows8-original colored"></i>
+                                <span>Windows Server</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="fa-solid fa-sitemap" style="color:#38bdf8;font-size:3.8rem"></i>
+                                <span>Active Directory</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="fa-solid fa-globe" style="color:#38bdf8;font-size:3.8rem"></i>
+                                <span>DNS/DHCP</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="devicon-linux-plain colored"></i>
+                                <span>Linux</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="fa-solid fa-network-wired" style="color:#049fd9;font-size:3.8rem"></i>
+                                <span>Cisco (CCNA)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Automation -->
+                <div class="tab-pane fade" id="tab-automacao" role="tabpanel">
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="fa-solid fa-clock" style="color:#CC2927;font-size:3.8rem"></i>
+                                <span>SQL Server Agent</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="devicon-microsoftsqlserver-plain colored"></i>
+                                <span>T-SQL</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="devicon-powershell-plain colored"></i>
+                                <span>PowerShell</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <div class="tech-card reveal-up">
+                                <i class="devicon-python-plain colored"></i>
+                                <span>Python</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /tab-content -->
+
+            <!-- Cross-cutting skills -->
+            <div class="row g-3 mt-4">
+                <div class="col-md-4 reveal-up">
+                    <div class="skills-feat">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div>
+                            <h5>Performance</h5>
+                            <p>Analysis with DMVs, Extended Events and Profiler; index and statistics maintenance; slow query diagnosis.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal-up">
+                    <div class="skills-feat">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <div>
+                            <h5>Security &amp; Access</h5>
+                            <p>Management of logins, roles and permissions; documentation of procedures.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal-up">
+                    <div class="skills-feat">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <div>
+                            <h5>Backup &amp; Recovery</h5>
+                            <p>Backup plans, restores and integrity checks (DBCC CHECKDB).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ EDUCATION & CERTIFICATIONS -->
+    <section id="formacao">
+        <div class="container container-xl">
+
+            <div class="section-header text-center reveal-up">
+                <span class="section-tag">Education</span>
+                <h2 class="section-title">Education &amp; Certifications</h2>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- Academic background -->
+                <div class="col-lg-6 reveal-left">
+                    <div class="formacao-card">
+                        <div class="formacao-card-title">
+                            <i class="fa-solid fa-graduation-cap"></i> Academic Background
+                        </div>
+                        <div class="formacao-list">
+                            <div class="formacao-item">
+                                <span class="formacao-period">09/2025 – 2028 (expected)</span>
+                                <h5>Master's in Computer Engineering</h5>
+                                <p>IPP – ESTG. Dissertation: Project JANO, a monitoring platform for SQL Server instances.</p>
+                            </div>
+                            <div class="formacao-item">
+                                <span class="formacao-period">2022 – 2025</span>
+                                <h5>BSc in Information Systems for Management</h5>
+                                <p>IPP – ESTG. Final grade 15/20.</p>
+                            </div>
+                            <div class="formacao-item">
+                                <span class="formacao-period">2019 – 2021</span>
+                                <h5>Higher Technical Professional Course (CET) in IT Network and Systems Management</h5>
+                                <p>ATEC. EQF level 5, final grade 18/20.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications & training -->
+                <div class="col-lg-6 reveal-right">
+                    <div class="formacao-card">
+                        <div class="formacao-card-title">
+                            <i class="fa-solid fa-certificate"></i> Certifications &amp; Training
+                        </div>
+                        <div class="formacao-list">
+                            <div class="formacao-item">
+                                <h5>Cisco Networking Academy</h5>
+                                <p>Instructor Excellence, Expert (2024).</p>
+                            </div>
+                            <div class="formacao-item">
+                                <h5>Cisco CCNA</h5>
+                                <p>Full NetAcad training (3 modules, Letter of Merit).</p>
+                            </div>
+                            <div class="formacao-item">
+                                <h5>Power BI</h5>
+                                <p>60 h (Zona Verde; INA, NAU platform).</p>
+                            </div>
+                            <div class="formacao-item">
+                                <h5>Cybersecurity Essentials</h5>
+                                <p>Cisco and Palo Alto Networks (2020).</p>
+                            </div>
+                            <div class="formacao-item">
+                                <h5>Certificate of Pedagogical Competence</h5>
+                                <p>CCP F712253.2021.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ CONTACT -->
+    <section id="contact">
+        <div class="container container-xl">
+
+            <div class="section-header text-center reveal-up">
+                <span class="section-tag light">Contact</span>
+                <h2 class="section-title light">Get in Touch</h2>
+                <p class="text-light-muted">
+                    Sometimes it all starts with a simple message.
+                </p>
+            </div>
+
+            <div class="row g-5">
+
+                <!-- Info -->
+                <div class="col-lg-4 reveal-left">
+                    <div class="contact-card">
+                        <div class="contact-avatar" role="img" aria-label="Avelino Almeida"></div>
+                        <span class="contact-card-tag">Availability</span>
+                        <h3 class="contact-card-title">Open to new connections and opportunities.</h3>
+                        <p class="contact-card-copy">
+                            Get in touch for networking, shared interests, interview scheduling and
+                            job opportunities.
+                        </p>
+
+                        <ul class="contact-list">
+                            <li>
+                                <span class="contact-icon"><i class="fa-solid fa-mobile-screen-button"></i></span>
+                                <span>+351 916 472 603</span>
+                            </li>
+                            <li>
+                                <span class="contact-icon"><i class="fa-regular fa-envelope"></i></span>
+                                <span>avlalmeida@gmail.com</span>
+                            </li>
+                            <li>
+                                <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
+                                <span>Penafiel, Portugal</span>
+                            </li>
+                        </ul>
+
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/in/avelinoalmeida/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/AvelinoAlmeida" target="_blank" rel="noopener" aria-label="GitHub">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://learn.microsoft.com/en-us/users/avelinoalmeida/transcript/dzm3mbz4w8z03e1" target="_blank" rel="noopener" aria-label="Microsoft Learn: transcript" title="Microsoft Learn">
+                                <i class="fa-brands fa-microsoft"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulário — Web3Forms (mesma chave da versão PT) -->
+                <div class="col-lg-8 reveal-right">
+                    <div class="contact-panel">
+                        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+                            <input type="hidden" name="access_key" value="c298b872-baf8-486a-abd9-abb22dd241b7">
+                            <input type="hidden" name="subject" value="Contacto via avelinoalmeida.github.io (EN)">
+                            <input type="hidden" name="from_name" value="Website Avelino">
+                            <input type="checkbox" name="botcheck" style="display:none">
+
+                            <div class="row g-3">
+                                <div class="col-sm-6">
+                                    <input type="text" name="name" class="form-ctrl" placeholder="* Name" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="email" name="email" class="form-ctrl" placeholder="* Email" required>
+                                </div>
+                                <div class="col-12">
+                                    <textarea name="message" class="form-ctrl" rows="5"
+                                              placeholder="* Message" required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn-send" id="submit-btn">
+                                        <span class="btn-text">Send Message <i class="fa-regular fa-paper-plane"></i></span>
+                                        <span class="btn-loading d-none">
+                                            <span class="spinner-border spinner-border-sm"></span> Sending…
+                                        </span>
+                                    </button>
+                                    <div id="form-success" class="form-success d-none">
+                                        <i class="fa-solid fa-circle-check"></i> Message sent successfully!
+                                    </div>
+                                    <div id="form-error" class="form-error d-none">
+                                        <i class="fa-solid fa-circle-exclamation"></i> Something went wrong. Please try again.
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ FOOTER -->
+    <footer id="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 Avelino Almeida &nbsp;&middot;&nbsp; DBA Consultant &nbsp;&middot;&nbsp; Penafiel &nbsp;&middot;&nbsp; <a href="hobbies.html">Hobbies</a></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS (defer = não bloqueia renderização) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <!-- JS personalizado -->
+    <script src="../assets/js/main.js" defer></script>
+</body>
+</html>
