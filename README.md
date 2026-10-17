@@ -3,21 +3,21 @@
 Site pessoal de Avelino Almeida, Consultor DBA na eSPap (SQL Server on-premises e Azure, BI e ETL).
 Reúne o perfil profissional, o CV para descarregar, um formulário de contacto e uma página de hobbies.
 
-O site está disponível em **português** (raiz) e em **inglês** (`/en/`). O botão com a bandeira, no canto
+O site está disponível em **inglês** (raiz, a versão que abre por defeito) e em **português** (`/pt/`). O botão com a bandeira, no canto
 superior direito, troca entre as duas versões da mesma página.
 
 ## Páginas
 
 | Página | PT | EN |
 | --- | --- | --- |
-| Perfil profissional: resumo, percurso, competências, formação e contacto | [index.html](index.html) | [en/index.html](en/index.html) |
-| Hobbies: BTT, a KTM, a Confraria, futebol de formação, gaming e redes sociais | [hobbies.html](hobbies.html) | [en/hobbies.html](en/hobbies.html) |
+| Perfil profissional: resumo, percurso, competências, formação e contacto | [pt/index.html](pt/index.html) | [index.html](index.html) |
+| Hobbies: BTT, a KTM, a Confraria, futebol de formação, gaming e redes sociais | [pt/hobbies.html](pt/hobbies.html) | [hobbies.html](hobbies.html) |
 
 ## Estrutura
 
 ```
-index.html, hobbies.html     versão portuguesa
-en/                          versão inglesa (mesmas secções e mesmos ids)
+index.html, hobbies.html     versão inglesa (abre por defeito)
+pt/                          versão portuguesa (mesmas secções e mesmos ids)
 assets/
   css/main.css               estilos comuns (inclui o seletor de idioma)
   css/hobbies.css            estilos da página de hobbies
@@ -46,8 +46,8 @@ No VS Code também funciona a extensão Live Server.
 
 ### Textos nos dois idiomas
 
-Cada página existe em duas cópias (`index.html` e `en/index.html`, `hobbies.html` e `en/hobbies.html`).
-Ao alterar um texto numa versão, atualizar também a outra. Nas páginas dentro de `en/`, os caminhos
+Cada página existe em duas cópias (`index.html` e `pt/index.html`, `hobbies.html` e `pt/hobbies.html`).
+Ao alterar um texto numa versão, atualizar também a outra. Nas páginas dentro de `pt/`, os caminhos
 para os recursos começam por `../assets/`.
 
 ### Hobbies

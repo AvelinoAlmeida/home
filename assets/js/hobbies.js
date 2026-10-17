@@ -24,7 +24,7 @@
     const tx = (o, k) => (isEn && o[k + '_en']) || o[k] || '';
 
     // Os caminhos em hobbies-data.js são relativos à raiz do site;
-    // resolvê-los a partir deste script faz com que funcionem também em /en/
+    // resolvê-los a partir deste script faz com que funcionem também em /pt/
     const root = new URL('../../', document.currentScript.src);
     const url = p => new URL(p, root).href;
 

@@ -7,7 +7,7 @@
       - Nova aventura de vários dias: acrescentar em `aventuras`, com as etapas.
       - Fotos de um bloco: acrescentar em `fotos.<bloco>` (confraria, futebol, gaming).
         Enquanto a lista estiver vazia, o bloco mostra um visual sem fotos.
-      - Inglês (en/hobbies.html): cada texto pode ter uma versão `campo_en`
+      - Inglês (hobbies.html, na raiz): cada texto pode ter uma versão `campo_en`
         (ex.: `subtitulo_en`, `legenda_en`). Sem ela, usa-se o texto em português.
 
     Fotos: guardar a versão otimizada em assets/img/hobbies/ (máx. 1600 px),
